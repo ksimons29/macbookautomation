@@ -1,0 +1,447 @@
+Welcome to another week in AI.
+Things have been busy.
+We'll be looking at big releases from big companies this week,
+including claw-chipping their version of Memories.
+Spoiler alert, it's the best implementation I've seen so far.
+Google AI Studio releasing a plethora of models,
+all in one interface, in their revamped Google AI Studio,
+OpenAI shipping a browser,
+and so much more in this week's episode of AI News you can use
+to show that rounds up all of this week's AI releases,
+filters by the ones that are available,
+and then we discuss and test the ones that are relevant.
+Let's go.
+Let's talk about memories in general.
+You probably know these from within ChatGPT.
+In ChatGPT, they're under personalization
+and down here memories.
+They're automatic way of gathering information about you,
+and then your new chats include that information.
+Claude now shipped their version of this,
+but it is way different from what we've seen
+within ChatGPT, and I would even argue different
+from any other AI out there.
+If I go to settings, then capabilities,
+and scroll down somewhere in the middle,
+you should find this new Memories feature.
+As you might already notice from ChatGPT,
+there's two options, one of them,
+where you allow it to look into past chats,
+and the second one, where it proactively creates
+new memories from past chats.
+And this is kind of the big difference.
+The first time I saw this, all of these memories
+were pre-generated in here from the past chats,
+and then you could edit them by talking to Claude
+and saying something like, remove this,
+and then we'll remove it.
+But let's get to the differences here
+and why I think this is superior
+to the ChatGPT implementation as of now.
+First of all, it separates memories that are just about me
+from ones that are about recent things
+that might have been working on.
+You can see that here in this top-of-mind category,
+it talks about some recent chats that I had.
+If you saw the ChatGPT Atlas video,
+you would have seen that I was generating images
+of Connor McGregor with Claude as a demo for Atlas,
+which we'll talk about in a second.
+And it shows that here.
+It says that, hey, Igor is working on
+content creation projects,
+including developing social media captions
+for MMA fighter content.
+This is not what I usually do,
+but I absolutely love that it's categorized
+under top-of-mind here, whereas in ChatGPT,
+this would just be another memory
+that in terms of hierarchy would be evenly as important
+as this core work context for me or personal context,
+especially the personal context
+doesn't change that quickly.
+Whereas my latest chats changes on a daily basis.
+And this is why if you've been following the channel,
+you will know that I'm not the biggest fan
+of memories in ChatGPT because me trying stuff
+will often pollute all my other chats.
+I'm not a content creator for MMA fighter content,
+but ChatGPT might assume this very quickly
+if I have memories on,
+but here it's categorized under top-of-mind.
+And it shows, I try this in a bunch of chats.
+If you ask it about yourself or your work,
+it's never gonna pull up these top-of-mind things.
+And if it does it,
+it will know that this is just something
+you've been trying recently
+and not a core part of your identity or your work.
+If I ask it what it knows about me,
+it recites the memories and you can see,
+it does point out that I've been working
+on a content creation project relating to this,
+but it knows that I've been only working on this
+rather than it being a part of my core identity
+if you ask Claude.
+Okay, so you might consider that a nuance,
+but here's the fact that makes this so amazing,
+in my opinion.
+These memories get rebuilt on a daily basis.
+You can see it up here.
+The summary is regenerated each night
+and does not include projects
+which have their own specific memory.
+So if I work on different things,
+this will update every day
+and Claude will simply have context
+on what I've been kind of trying lately,
+which changes every day,
+whereas in ChatGPT it's static.
+Once you work on something, it goes into the memories.
+And yes, they added a feature
+where things might get deleted last week,
+but I found it to be a bit random
+and this just works so much better for me.
+And yes, this also works for projects.
+So if I go into my AI education project,
+which I set up to manage a lot of the B2B initiatives
+that we're doing now,
+you can see it's generated memories in here too,
+that it also updates every day
+if I do anything within this project.
+Interesting thing I wanna highlight
+that also here, these categories of context are dynamic.
+So depending on the project,
+depending on what you're working on,
+these change and morph,
+depending on what kind of memories
+would be relevant to the given project.
+And most of all, and this is just a personal feeling,
+when you work with Claude, it just seems to work
+and it knows the right type of information.
+It's not too much, but it's also not too little.
+And as I said, the stuff that might be relevant,
+Claude knows that it might be relevant
+because it's just the top of mind things
+that you've been doing and not a core part of your journey.
+So yeah, I really wanted to get my thoughts on this out
+because I think this is an essential part
+of your experience and tools like this.
+And context management is everything
+when it comes to getting good results here.
+And honestly, this is the first time I see memories
+where I'm excited about using them
+rather than slightly anxious on what will chatGPT save
+and how will that distract my next chat experience?
+That's why by default, I kept memories off within chatGPT
+and I just manage my context manually.
+Long story short, this feels different.
+Claude memories are available as of now
+for all max users, that's their $200 plan
+and it's coming to the pro plan,
+which costs $20 a month soon.
+For users, don't get this.
+Unfortunate, but that's how it usually goes
+with these features that actually make a difference.
+Honestly, just this, it's probably not worth the money.
+You can just craft the context yourself.
+If you're enjoying this, make sure to leave a like.
+It really helps the channel, but now let's move on.
+The next release is also on Claude, super interesting one.
+For watching this channel,
+you probably already know about Claude codes,
+what many people consider to be the best AI coding assistant
+and many people also use it for marketing tasks,
+product management, chatGPT alternative,
+but it has been notoriously challenging to use,
+especially for non-technical people
+because you needed your terminal to run it,
+which can be intimidating, that's very understandable.
+Well, now they released a web version.
+All you need to do is connect this to your GitHub,
+and there you go.
+You don't need a terminal.
+You can just do things in here.
+The one requirement here is you do need to know
+the very, very basics of GitHub
+because it works within existing repositories.
+So for example, I could take the No Machine,
+which was a project on a previous video.
+And for that, you need to Claude GitHub application
+installed in your repository, which is as simple as this.
+Okay, so that was the setup and that's it.
+Now I can work with that repository,
+build out my project right here in the web browser.
+And yes, this also works on a mobile device,
+which for the first time makes it really simple
+to work with Claude code on the go.
+Furthermore, you could go into other repositories
+and start chats in parallel
+and do multiple things at once really easily
+or without your desktop looking like this.
+As per usual, you should be careful
+with multiple instances of Claude code on one project.
+And as already mentioned, I think the best part here
+is that it's really easy to use on the go now.
+So now we can keep vibe coding useless applications
+wherever you go.
+Okay, that's a joke.
+There's definitely a lot that you can do
+that makes a ton of sense,
+but maybe a good joke has a bit of truth to it.
+Okay, so one of the biggest gaps with AI right now
+is the following.
+It's great at thinking,
+but when it comes to actually doing things
+like sending email or updating an ocean page,
+most people still end up clicking
+through 10 different tabs or apps.
+And that's why I'm excited to show you Rube by Composio,
+the sponsor of today's video.
+It's basically a super assistant
+that lives within any AI chat application
+that you already use.
+In other words, it's like glue between the apps
+and something like chatGPT, Claude, Cursor or VS Code.
+You name it.
+And it lets you control over 500 apps
+with just natural language.
+So instead of building an automation
+and struggling with connecting various APIs,
+I can just say, find emails from the last 24 hours,
+summarize the important ones and mark promos as spam.
+And Rube just does it.
+It even remembers you across various applications.
+You just authorize once and then run Gmail actions
+straight from Cursor, Claude, Manus, wherever.
+For creators and builders, this can be huge.
+I can pull comments and likes from various platforms,
+drop them into a Google Sheet and flag the top posts.
+All with one prompt, no contact switching required.
+And if you want to, you can go way further.
+For example, you could publish a Figma design,
+auto resize to Instagram, TikTok, X and YouTube
+or scrape Reddit trends and create posts based on the findings.
+As you know, I'm a big fan of open standards and MCPs.
+And if you want a quick way to start with Rube,
+you can add the streamable NCP endpoint,
+Rube.app slash MCP or just hit the Rube.app
+and plug it into something like N8N
+or any other automation app that you might already be using.
+It's SOC2 compliant with audit logs,
+so it's enterprise ready too.
+If this sounds interesting to you,
+try Rube for free at getrube.link slash AI Advantage.
+Thanks again to Composio for sponsoring this video.
+And now let's look at some more AI news that you can use.
+The next big release this week has been chatGBT Atlas.
+And if you're not familiar, that's our brand new browser
+joining other AI browsers in this category
+like Proplexity's Comet.
+If you're interested in the details
+and how it performs in practice,
+I created a separate video that you could check out
+on the channel.
+But I did wanna follow up after a few days of using it
+and that is the fact that for me personally,
+this is not a sticky product.
+It's not something I really find myself wanting to use.
+And I've been even looking for specific ways
+to utilize this.
+And usually the most interesting ones
+are the AI browser using other AI tools.
+And then maybe moving it over to something
+like a Google Sheet or a Word document.
+Again, I showed that workflow in the separate video,
+but here this example actually combines another story
+we'll be looking at today, which is Google's new AI studio.
+And he just prompted Atlas to open the new Google AI studio
+and then build the app within it automatically.
+I'm sure you can get creative and find ways
+to get some value from this,
+but it's probably not the game changer
+that many people made it out to be when it came out.
+But there's one more prompt that I wanted to share
+with you here.
+Daniel from the team actually sent this to me.
+He said, this can be quite useful.
+Read this page, consider how it relates
+with my areas of interest
+and then give me a list of key points and insights.
+This way you can kind of match
+what context chatGPT has on you
+and the content that you're looking at.
+And this way it would kind of adapt it to you.
+Now here it talks about a genetic system
+requiring memory hygiene,
+similar to what Klot does with the memory release, right?
+But other than that, this is kind of good,
+but nothing that you couldn't have done with chatGPT.
+It's just a bit simpler in the browser
+as the site is right in here.
+And I personally do find these results here interesting.
+We'll put the prompt in the description below.
+You can try it for yourself
+as this works on the free plans too.
+For the next story, this could have been a quick hit,
+but I actually wanna make it a proper thing
+because this has been my number one feature request
+for a while in chatGPT
+and it's the ability to share projects.
+Up until now, this was only accessible
+to the enterprise plans as far as I'm aware.
+And now all the plans, including the free users,
+can share projects,
+meaning if you built out your context in a project,
+you can go ahead and finally share it with other people.
+Just make sure to change the accessibility
+of the project to anyone with a link
+or you can put an email in here and they'll get an invite.
+As you might have heard me say many times before
+on this channel, I think projects are the most powerful way
+to manage context.
+But with this sharing ability,
+this feature is a powerhouse
+and now you can finally collaborate with people.
+So one person gets to build it out
+and everybody gets to use it as an assistant
+on any sort of project.
+It's a minor feature within chatGPT with a big impact,
+at least for me and anybody else
+who has been using this on a daily.
+Another thing that is new this week
+is Google overhauling its AI studio.
+If you're not familiar, this is their developer interface
+for their various models,
+but really a lot of users and especially power users
+have felt at home in here for quite a while.
+Reason for that is all the new models come right into here
+before they even hit the Gemini web interface.
+And usually when new stuff comes out,
+it's free to use in here.
+And now they overhaul the entire interface,
+so it's even easier to use various applications
+all in one place.
+If I go to the chat interface here,
+you can see that I can switch between all their models.
+Nano Banana for Image Generation,
+Gemini 2.5 Pro for the smartest model.
+There's even a video model,
+although I do have to note that last week's release
+of VO2.1 is not in here yet.
+I'm sure that'll fall shortly,
+but yeah, you can just do all of these things in one place.
+So if I want videos and images of cats with hats,
+I can be so efficient at creating them now.
+This is incredible.
+Seriously though, the chat is kind of nice
+to have all the models in there.
+And then here in this build section, you can build apps.
+So I can build an app that adds hats
+to various pictures of animals.
+You could build this and it's gonna code up the whole thing.
+You could save it right to GitHub or deploy it.
+There you go, works as expected.
+And of course, this remains the place
+in which you retrieve your API key
+to build applications on top of Google's AI offerings.
+Okay, this week we have a bunch of quick hit stories
+that are worth mentioning,
+but maybe we don't need to spend multiple minutes on them.
+Starting with the general availability
+of the Cloud Desktop app.
+I feel like this has been generally available already,
+but they've updated it with a few features,
+like voice inputs, a shortcut where you can invoke it
+from wherever you are.
+Just double tap the option button on a Mac.
+You can easily bring in context
+by screenshotting different windows.
+One note about the voice inputs.
+Honestly, it's quite bad.
+It just gets punctuation, capitalization,
+and some words wrong regularly,
+nowhere close to what you might be used to,
+from chatGPT or 11Labs.
+Next up there, I've been some changes
+to the guardrails on Sora2.
+This is kind of an ongoing story that will keep developing,
+as this has made a big impact in the mainstream.
+So one thing that happened is that
+Martin Luther King's estate
+complained to OpenAI for disrespectful depictions.
+And OpenAI banned the usage of Martin Luther King.
+If you haven't seen them,
+there were a bunch of videos
+where he was in a grocery store.
+My sister, I have a dream that one day
+this slushie will be free for all who thirst.
+Hey, sir, this isn't about dreams.
+It's about paying for your slushie.
+I mean, I thought it was hilarious,
+but I entirely understand the point here.
+So now OpenAI is apologizing for unintentional generations.
+And there have been a bunch more
+celebrity complaints like this.
+Now OpenAI is slowly reeling it back in.
+So yeah, as per usual,
+some of these AI releases are most exciting and free
+on the day of release.
+Now the restrictions are coming in.
+Then we also have Runway releasing various applications.
+I mean, things like changing image styles is not novel.
+Others are more interesting,
+like removing objects in videos.
+It's just making things that were possible
+before more user friendly.
+And I think for filmmakers,
+these Runway apps are something you should definitely explore.
+On a similar note,
+they also released this workflow's view.
+We've seen this many times before,
+but Runway is just trying to be this platform
+that has all of it.
+So this is new,
+also along with the new model fine tuning
+for which you do need to sign up,
+but I reckon this is gonna become a bigger thing over time
+for filmmakers can fine tune their own models
+on specific aesthetics and really make it their own.
+Then we also have Proplexity moving
+in every niche imaginable.
+I mean, at this point,
+they're just trying to be the Google of AI.
+They have a language learning feature now.
+So you could be learning languages with Proplexity.
+Next up, I wanted to briefly feature something
+that you might not be able to use,
+but I thought was really interesting.
+Channel 4 in the UK used the AI presenter
+for the first time to kind of make the point
+that people wouldn't even notice these days.
+Just thought this was interesting
+and I want to share it with you at the end of the segment.
+She kind of revealed that she's AI.
+Viewers were left in shock.
+And then last, but certainly not least,
+I wanted to show you this Google skills page.
+And this is brand new,
+but basically it's a platform to acquire AI skills
+and a lot of this is free.
+So you can just go into the catalog,
+look at the different topics here.
+Some of them are gonna be very technical and very concrete.
+But if you go to these collections, for example,
+and go to AI boost bytes,
+they have these 10 minute lessons on various topics,
+including little workflows or hacks.
+As you know, this channel is all about uplifting people
+by sharing this information.
+And I think Google skills do this really well.
+So feel free to check it out.
+And that's really everything we have for this week.
+A lot of practical things that I will be implementing
+in my workflows and testing further.
+I hope you found something useful or inspirational.
+And with that being said, my name is Igor
+and I hope you have a wonderful week.

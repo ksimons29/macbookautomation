@@ -1,0 +1,1461 @@
+Playlist: Claude Code Tutorial
+YouTube Playlist
+========================================
+
+=== VIDEO 1/10: Claude Code Tutorial #1 - Introduction & Setup ===
+
+All right then gang, in this course we're going to be diving into cloud code which is an AI-powered
+agentic coding tool created by Anthropic which you can use to analyse, plan, write and edit code
+within your projects. Similar to other agentic coding tools like Copilot or Cursor or Windsurf
+but whereas those other tools typically come with a user interface embedded within code editors
+themselves, cloud code lives directly in the terminal and we interact with it through the
+and that means it can integrate with your existing development workflow a little more
+seamlessly without forcing you to switch your IDE. On top of that you can use cloud code within
+GitHub workflows to automate code reviews on pull requests to provide feedback as well as
+have it work independently on open issues in your repository. I also think it sets itself apart in
+its ability to really understand the code base of whatever project I use it on and in my own
+personal experience I found the code it generates to be more tailored and appropriate on a project
+by project basis. So in this series we'll be diving into how to set up cloud code on your
+computer, how to provide it context and learn about your code base, how to generate code for
+us in a targeted and specific way and we'll also set it to work on our GitHub repo to work
+autonomously on simple issues and books. On top of that we'll be looking at MCP servers to provide
+additional tools to cloud code, custom commands for common tasks and we'll even try spinning up a
+sub agent to work alongside cloud and just to clarify this will not be a vibe coding course
+where we just let the AI loose to code everything for us. In my opinion that's not a productive
+workflow and it can lead to more bugs, sloppy code and technical debt making the code much harder
+to maintain in the future. So we'll be taking a more hands-on approach coding alongside cloud
+on tasks and features which are more narrow and focused in scope and also checking the work it
+does as we go. And I feel this approach generally keeps the code cleaner, less buggy and I stay
+fully in the loop and in control, dipping into the code to make manual changes
+where I need or want to. Anyway before we do anything we'll need to install cloud code and
+sign up for a plan. Okay then so I'm on the cloud code home page and if you scroll down a little
+bit you're eventually going to see an npm command we can run to install it on our computer.
+Now it used to be that on windows you would have to install it via wsl but now you don't have to
+and you can just run this command directly in your windows terminal so copy that for later.
+You'll also need to sign up for an account and choose a pricing plan which you can do
+right here on the pricing page so you can use cloud code with a pro plan or a max plan. The free
+plan gives you access to the cloud models on the web and the desktop app but not cloud code itself
+at least not at the time of recording this video. The pro plan is $17 a month and for that you get
+some fairly decent usage limits which reset I think every five hours and you do also get a warning
+when you're nearly reaching your limit. You also get access to more models like sonic 4 and opus 4.1
+but the opus model does eat through your limits much faster so I default to sonic for most things.
+The max plan is way more expensive but it gives you more usage and access to all the latest features
+as they ship. So sign up choose a plan and then crack open your terminal. All right then so inside
+a terminal now we want to run that command we just copied npm install hyphen g to install this globally
+at anthropic ai forward slash cloud code so press enter to install this. Okay and then the next thing
+you want to do once you've installed that is navigate to a project that you want to work with
+cloud on so I've already navigated to this one called shinobi this is what we're going to be
+using for this course and then you can type cloud and press enter and this starts up a
+cloud session inside this project for you. Now when you first start using cloud the first time you
+use it it's going to ask you a few questions it's going to ask you for a mode so I'm going to go for
+dark mode and then it's going to say you can log in using the console account which is api usage
+or with a subscription. Now I showed you those plans a moment ago and I've already got a pro
+subscription so I'm going to sign up with this signing rather and that's going to open a browser
+for you which I'm going to authorize off-screen and now you can see it says login successful press
+enter to continue and then it says here cloud can make mistakes so always review cloud responses
+especially code and it says due to prompt injection risks only use it with code you trust
+all right so press enter to continue and then when you first start cloud in a particular project
+it's going to ask you if you trust the files in the folder yes I do and now we can start chatting
+with cloud so just try asking it about your current project that's what I'm going to do
+and this is good if you ever start working a project that you've not worked on before it
+could be friends or colleagues you can just say can you provide me with a summary of what this project
+is and press enter and you can see right now it's reading different files it's looking at the code base
+and now it's come with a response so you can see it's a simple blog application built as a starter
+project for a cloud code crash course which is pretty cool it's detected that from my readme
+file I think it's a next jspac web application that serves as a practical learning platform for
+AI assisted development so there's a tech stack here learning focus areas etc now personally I
+like to see the code that I'm working on as cloud or any other coding tool makes changes to it because
+then I can easily check any edited or new code and also go into the weeds myself to work on the
+code manually when I want to or need to so for this series I'm going to be running cloud code in a
+terminal within vs code and when we run the cloud command inside here cloud is automatically going
+to install the cloud code extension for vs code and that allows it to integrate more seamlessly
+within the editor by adding a few extra features like diff viewing adding text selection as context
+some keyboard shortcuts and also active tab awareness so that cloud can see exactly what
+file we're working on now if the extension doesn't automatically get installed then you can manually
+install it by coming to the extensions tab and searching for cloud code anyway I've got that
+same shinobi project open in vs code which is the project I'm going to be working on for the
+duration of this course and the first thing I'm going to do is run the project by opening the
+new terminal over here and then typing npm run dev that's going to spin up a local dev server so we
+can preview this thing in a browser using localhost port 3000 so then on the home page we've got two
+buttons right here one to go to the blog and one to go to the preview page for new UI components
+so if we go to the preview page first of all you can see that I've already added a few different
+things to this page like headings regular text button components etc and during this course
+I'm going to get cloud code to make some more reusable UI components for me and then add them
+to this page so that we can preview them before we use them in the actual project now if we go back
+and then go to the blog section we can see a really simple blog design where we list out a bunch of
+blogs and they're all coming from high graph which is a headless cms and also a sidebar over here
+with some dummy data inside it there's also a light and dark mode which we can toggle with this
+little icon in the header so this is the project we're going to be working on with cloud code but
+you can use whatever project that you want it doesn't really matter what I would say is to begin with
+make sure it's a throwaway project in case things go horribly wrong or at least use version control
+so you can get rid of any unwanted changes all right so before we move on and start doing any
+real work with cloud code I just want to set up a few things first I'm going to use a special
+command cloud code gives to us which is forward slash terminal setup and when we run this command
+it's going to install the shift plus enter key binding for new lines when we're chatting with
+cloud code so if you wanted to start a new line in the chat window you'd press shift and enter
+next to make sure I don't end up wrecking this startup project I'm going to ask Claude to switch
+to a new branch called Claude hyphen edits and Claude can do this by the way it has knowledge
+about your local git repository and it can run bash commands to do things like stage and commit
+changes switch branches merge branches and even resolve conflicts and you can also ask it about
+commits or branches or changes made between commits and it's going to be able to look that up for you
+anyway when we tell it to do any of these things it's going to show us the bash command it wants
+to run and ask us for permission to run it we'll say yes for now to let it run that command
+and then we'll end up on that new branch so that we can start making some edits
+so now we've got Claude code installed configured and ready to go inside vs code in the next lesson
+we're going to start making some actual code edits and we'll also talk about adding memory to Claude
+using a Claude.md file and by the way if you want early access to the entire course you can get it
+now on the netninger.dev site so I will leave this link down below the video you can buy the
+course for three dollars or if you want you can sign up for a netninger pro subscription which is
+just nine dollars a month and for that you get access to all of my courses you get early access
+to every course as well plus access to my premium masterclass courses too so the first month is half
+price when you use this promo code down here and I will leave this link down below the video so you
+can go ahead and sign up otherwise my friends I'm going to see you in the next lesson
+
+========================================
+
+=== VIDEO 2/10: Claude Code Tutorial #2 - CLAUDE.md Files & /init ===
+
+Okay then, so now we've got Claude code set up and running inside this project, I would
+like to start using it to make some changes to the code and working on new components.
+But before we do that, it's always a good idea when you're starting to use the forward slash
+init command to initialize a Claude .md file inside the project root.
+And when we do this, Claude scans the entire code base, it looks at the folder structure,
+how we style the application, any state management we use etc, the whole shazam, so that it gets
+a good feel for the project, where everything goes and how it should code new features
+in the future.
+Then it summarizes all of that and it dumps the information into a Claude .md file in
+a structured human readable format.
+Then whenever we have an active session with Claude code to either ask about our project
+code or to make changes to the code, it uses that Claude .md file as context and guidance.
+It's almost like a mini documentation of your code for Claude to use whenever it's
+trying to figure out the best way to implement something or to give feedback.
+So then I'm going to press enter now to run this command and see what it comes up with.
+And you can see as it's doing this, it's created a little to do list for itself.
+It's going to explore the repository, analyze the package.json and the source code, it's
+going to check for existing documentation files and then finally it's going to create
+this Claude .md file at the bottom and you can see that it's kind of checking things
+off as it does it.
+So it's really good to see the progress of what it's doing.
+In between all that, it's reading the files, it's searching for things.
+So yeah, it's doing a real extensive kind of task.
+All right then.
+So now once it's done all that, you can see it's created this plan and if we scroll right
+to the bottom, it's asking us, do you want to create this Claude .md file?
+And I'm going to select yes.
+So then it goes ahead to create that file, which we can see in the root of the project
+directory now.
+So let's open that up over here and see what it looks like.
+So you can see this file provides guidance to Claude code when working with code in this
+repository.
+So it's got some different development commands that it's found from the package.json thing
+right here.
+It's got an architecture overview.
+So it says what it is briefly, so next.js15 blog application.
+You can see the different things we're using inside it.
+So React 19, Telwind v4, vTest, et cetera.
+We've got a project structure, which is quite nice.
+So it knows that when it's creating new files, hopefully where to put those files.
+We've got some data architecture right here.
+So it knows that we're using high graph for the content and down here we've got information
+about the styling.
+We've got a testing setup right here and some additional development notes as well.
+So this is quite comprehensive.
+It gives Claude code now a good guide as to what we're doing and whatever we make changes,
+it can use this guide.
+Now since I'd already started this project before Claude code got involved, it was able
+to scan my existing code base and pick up on a lot of things.
+So it could make a detailed Claude file based on the code I've got.
+But if you're starting with a brand new project with virtually no setup files or code, then
+it's going to have much less to work with and the Claude.md file is probably not going
+to have much in it.
+But in that case, you can manually go into the file and edit it yourself to outline any
+high level project structures you're going to put in place, any tools, packages or frameworks
+you're going to be using, your code style preferences and just basically an overall
+summary of the application.
+And you can just update it as you go then.
+And that last bit is important, whether you're starting with a new project or an existing
+one, because you should keep this file updated if you change your file structure, any packages
+you use or anything else outlined inside this file.
+If you don't, then Claude code might not automatically pick up on those changes and
+it could go off in a completely different direction when you ask it to do something.
+Anyway, this Claude.md file now gets added to the session context automatically so that
+Claude can refer to it when it makes changes.
+And you'll find that keeping an up to date Claude file like this leads to much better
+code generations.
+So then now that we have this file, let's ask Claude code to do something and see if
+it sticks to the guidance.
+So what I would like Claude code to do for us is make a new hook, which is going to
+store the user's theme preference based on whatever theme they have when they toggle
+that little icon in the top right hand corner.
+Now I noticed that inside the Claude file over here, we don't reference a hooks folder.
+So this would be a good opportunity to just update this file so that Claude code knows
+where to create hooks.
+So I'm going to save this inside the project structure bit right here where it says all
+hooks reusable hooks go inside this hooks folder.
+So now if I ask Claude code to make a hook, hopefully it's going to place inside that
+folder.
+All right, then so you can see we don't actually have a hooks folder at the moment, but hopefully
+Claude code will create that as well.
+I'm going to open up the terminal and then I'm going to ask it to create this new hook.
+I will say, can you create a hook to store the user's theme preference in when they
+toggle the theme on the site?
+And I will say store the value in local storage for next time.
+And then I'm also going to say don't use the hook anywhere yet because Claude code has
+this habit of if it creates a new feature hook component, whatever it might be, it wants
+to use that hook somewhere in your project.
+So a lot of the time I had this at the end to make sure it doesn't do that.
+So I'm going to press enter.
+The only thing I'm really concerned with at the moment is to test where the Claude code
+looks at that Claude.md file and creates the hook in the correct folder.
+Okay, so it looks like it's come up with some code.
+And if we take a look at this over here, you can see it wants to place inside the hooks
+folder.
+All right, so if we open this up a little bit, this is the hook in the folder.
+If we open this up a little bit, this is the hook it's created right here.
+And again, I'm not going to examine the code too much.
+I would normally, if this was something I was working on, I would definitely examine
+the code.
+But for now, I'm just going to say yes, we're going to accept that change.
+And you can see it's created the hooks folder and it's created the use theme file within
+the folder.
+Awesome.
+You can also add a memory to the Claude.md file directly from the chat session by using
+a hash symbol.
+For example, I could add a hash then say something like, when making new page components, always
+add a link to that page in the header.
+And you can see down here as I type that it's telling us it's going to memorize what we're
+telling it because we added that hash.
+And the longest shot of that is that it's going to place this instruction inside the
+Claude.md file for future reference so that now whenever it creates a page component,
+it should hopefully create a header link for it too.
+Now when we hit enter, we're going to see a few options.
+We can save it to project memory, which is into the Claude.md file which was created
+for this project.
+You could save it to local project memory in the same root folder but with the dot local
+part added to the file name.
+And you can also save it to global memory, which is to a global Claude file stored in
+the root Claude folder on your computer, which the installation added for us.
+So project memory is what gets set up when we run the forward slash init command to create
+this Claude.md file in the root of the project.
+And this file is meant to be tracked by version control and pushed to your remote repository
+so that any other developers working on the project have the same Claude file with the
+same guidance for Claude code for this project.
+And that means any memories or information in this file should be specific to the project.
+For example, folder structure, naming conventions, tests, frameworks, etc.
+The local project memory is a file meant for your own personal guidance and preferences
+when it comes to working with Claude code.
+For example, outlining any kind of personal tooling you might use that isn't necessarily
+something other developers working on the same project would use.
+And this file wouldn't be pushed to the remote repository and it would just be local to you
+inside this project.
+And finally, user memory is your personal guidance to Claude when it comes to all projects
+you work on.
+So any tools you use globally across many projects or any personal code style preferences
+that you have would go in that file.
+And again, this would just be for you on your computer, but it would be for every project
+that Claude code runs in.
+For now, we're just going to add this to the project memory, meaning it should get added
+to the claude.md file that we already have.
+So if I close this off and open this file up, we should be able to see at the bottom that
+new memory has been added.
+And you can see it right here.
+We're making new page components.
+Always add a link to that page in the header.
+Awesome.
+All right, so now we're going to test this out.
+So I'm going to open Claude code backup and I'm going to paste in a prompt which says,
+can you add a new about page with only an h2 title and a single line of lorem as contact
+content rather.
+So press enter.
+Hopefully it's going to read that instruction in the claude.md file as well and create a
+link for us.
+And you can see in its to-dos, it says right here, add about page link to the header navigation.
+So it knows about that.
+All right.
+So I'm just going to accept these changes.
+Again, normally you should check this, but for the sake of this tutorial, I'm just going
+to accept this.
+And again, it's asking for permission to edit the file, the layout file this time to add
+the new link.
+Again, I'm going to press yes, you can do this.
+And then another change to the layout file, which I'm going to accept as well.
+Okay.
+And now it's done.
+So if I close this off, open up app and then we can see this about page and inside there,
+we have an h2 title and just a single line of lorem ipsum awesome.
+Then if we go to the layout page, which it's edited, hopefully it's added a link right
+here.
+So it's added it to this nav.
+So it says about right here.
+Now let's try this out in a browser.
+Okay.
+So yes, it has done that.
+You can see the about link here.
+And if we click on that, we go to the about page.
+Now you can see also retrospectively, it's added these other two links, which I didn't
+ask it to do.
+And this is one of the things I've noticed about claude code sometimes, like I mentioned
+before, is sometimes likes to do things beyond the scope of what you've asked it to do.
+So it is important to maybe tell claude code, look, don't do this, just do this.
+And that could be something you add to your claude.md file.
+Now just really quickly, I do want to mention that on the claude code docs, they say that
+the local memory is being deprecated in favor of importing untracked files within the project
+level memory to provide that personal context to claude.
+And I'll show you how to import a reference files later in the course.
+But at the time of recording this video, the local option still shows in the terminal
+when you use the memory hashtag shortcut to add new memories.
+Another way you can access your memory files is by using the memory command, which is just
+forward slash memory.
+And by the way, if it isn't already obvious when I say memory files, I'm just talking
+about the claude.md files, whether they're project, local or global.
+But anyway, when you use this memory command, claude code is going to ask you which memory
+file you want to open and edit.
+So you can select any of these and press enter to open that file up.
+For example, if I select the project memory, it's going to open up the claude.md file right
+here in VS code so that I can edit it directly myself.
+So then just to summarize, it's always good practice to use the forward slash init command
+when you bring claude code into a project because it gives claude the chance to learn
+about the code base and outline any structural patterns, frameworks, libraries, name of conventions,
+etc. in a claude file.
+That file is then used by claude as context automatically when it makes decisions about
+your project in the future and it can be added to your remote repository so that other developers
+working on the project have access to it as well for their own workflow using claude
+code.
+Finally, it's not something you should just create and then forget about but rather keep
+on top of edit and update when things change within your project.
+That way you're always keeping claude in the loop and you'll find it's work to be much
+more in line with your project's existing current code and structure.
+
+========================================
+
+=== VIDEO 3/10: Claude Code Tutorial #3 - Context ===
+
+Alright, so in the last lesson we talked about the clod.md files, otherwise known as memory,
+which clod code uses when you're asking it to do something.
+Now it's able to do this because the clod.md file gets added automatically as context to
+any clod code session like this one we've got going on now.
+But what do we mean when we say context?
+Well, just like in conversations with real people, responses are more accurate and appropriate
+from AI models when you provide additional relevant information or context to your prompts.
+Imagine I just said the word banana to you in a conversation without any additional context.
+You probably wouldn't know how to react and you would most likely think I'm quite strange,
+but if I said to you first of all, my favorite fruit is a banana, then I've added context to
+that word and you might still think I'm strange, but at least you know why I'm saying the word
+banana and you could even respond with your own favorite fruit.
+The same is true when you're having a conversation with clod code or any other AI powered chat.
+If I just told clod code to fix the link, it probably won't know where to start or what link
+I'm referring to or even what's wrong with the link.
+But if I referenced a specific file or component where that broken link is as context to the prompt,
+then clod's got a much better chance of knowing what I'm going on about and the results are
+going to be much better because now instead of having to scan the entire code base for some
+kind of broken link that it doesn't know about, it's going to find it right away in the file we
+added as context. So we can manually add files as context to clod code by using the at symbol
+followed by a path to the file. For example, I could say at source and then backslash components
+and then also backslash UI. And as I'm writing this, notice that we get some file options that
+appear down here, which I can just cycle through using my arrow keys to select a file. So I'm going
+to select this button component file and I'm going to shift on it so that it gets added to my chat
+right here. So now inside that button component, we have different variants, right? Like primary,
+success, warning, etc. I want to add two more, which is just black and white variants for high
+contrast. So I'm going to say add a black variant with white text and a white variant with black
+test and then with black text rather sorry. And then I'm going to hit enter. And because we provided
+the file as context, it's going to know to look at the variants in that file and add them in.
+If we didn't add the context, then it wouldn't know maybe which file or components to add the
+variants to. And now you can see it's asking us to make changes, which I'm going to accept.
+And then if I open up the file in a moment when it's completed this, we should hopefully see the
+black and white variants. So let me cross this off. Oh, it's asking to make another change. So let
+me press yes to do that. And now if we open this file, we should be able to see those two new variants.
+Another way to give Claude code context of the file that you want to work on
+is by opening the file itself and just putting your cursor somewhere inside it. And when we do that,
+you can see the file name underneath the chat window over here, which tells us it's been added
+to the context. Now, if you close that file, it's still there. But that's because the cursor is
+still kind of active inside that file. But if you open a new file, just put your cursor inside that
+one instead, then it's going to update over here as well. Now you can only add one file to the context
+this way, but you can add multiple files by using the at symbol several times in the prompt itself.
+Also, you can select a portion of code inside a file, and it's going to hone in and use that
+little section you've highlighted as context. And you can see that down here in the chat as well,
+that this amount of lines is selected. So you can also add references using this at sign to
+Claude.nd files. So if I wanted to reference a schema file, for example, for whatever Claude
+works with data models, I could do, and it would load that file up into the context then. Or I
+could reference a testing config file in here or anything else I think Claude code should know
+when making edits to certain parts of the code. So that's how we add files as context using the
+at sign or opening the file manually. But we can also add images as context too. So I've got a picture
+of a button over here with a 3d effect. And I want Claude code to apply that kind of 3d effect to our
+buttons. So what I'm going to do is drag and drop the button file into the chat session over here.
+And now it's added as context. Then what I'm going to do is paste in a prompt and it says,
+can you update the button design? Let's just make this more specific. We'll say button design in the
+button components to look more like the button on this image with a 3d effect keeping all of
+the color variants. I'm also going to reference the file in context as well by saying at source.
+And then we want to go into components and let's do backslash components to do that.
+And then we want the button file down here. So I'm going to tab on that to add it to the
+context as well. Then press enter. All right. So I'm going to allow it to make these edits.
+And again, it wants to make some more edits. I'm going to press yes to allow it to do this.
+All right. And now it's changed it. Okay. And now in a browser, we can see those buttons
+look a lot more 3d. It's added that 3d effect. It's also added, I think a subtle gradient going
+from top to bottom. So yes, done a really good job there. So we've seen now how to add context
+to prompts, which essentially gives Claude code more information about any given task. So adding
+context when it's needed is really important. However, adding too much unnecessary context can
+lead to less accurate results. Now on a prompt by prompt basis, you're probably not going to
+intentionally do that. If you're working on the button component, you most likely won't add 50
+other unrelated files as context. However, it can happen unintentionally. So let me explain
+how first of all, and then we'll look at some ways to combat that. So imagine we're working on a
+feature like a shopping basket, and we provide Claude code with a bunch of different prompts
+and files as context over several different messages inside the session. Well, all of those files and
+messages, including the AI model responses, they're all stored in context in the current chat
+session. And that means whenever you're sending new prompts, Claude code's got the entire chat
+history plus any additional context you manually added like files as context for the session.
+Now that's okay while we're working on this feature, because it is probably useful for Claude
+to know about that history and the changes that it's been making. But imagine we then get sidetracked
+because the button doesn't quite look right inside the shopping basket. And we start asking Claude
+code to make UI changes to the button component, which is I suppose a completely separate thing
+to the shopping basket. Yes, we might use the button on that section, but largely the basket
+page is unrelated to the button component. So if we started working on the button component in
+this chat, Claude code's going to still have all of that previous chat and file context
+about the basket page, which in respect to working on the button is pretty useless.
+And we're essentially giving Claude a bunch of useless context to read while it's working
+on the button. And that could confuse him. It might even start making inline edits to the
+button itself on the basket page, which isn't what we wanted. So when we're working on a feature
+with Claude code, it's always best to keep the context clean and focused on whatever we're working
+on and not let it get bloated with information that it doesn't need. So how do we combat this?
+Well, there's a few ways. First of all, you could just exit the chat using the forward slash
+exit command and then start a new one in the terminal by typing Claude again and hitting enter.
+And then from inside any session, you can resume other previous sessions by using the forward slash
+resume command, which I'm going to show you later. But if you don't want to do that, and you want to
+stay inside the same session, you've got essentially three options. You can use the clear command,
+and that's going to clear the entire session history and context back to its original state.
+It will keep the Claude MD files as context, but anything else that you manually added in the
+chat and any conversation history that all gets cleared. So it's like deleting the chat and starting
+a fresh one, which might be useful if you fully completed a task and you want to move on to the
+next one. The other option, or one other option, should I say, is to use a command called forward
+slash compact. And this tells Claude to look through the entire session history and context
+and compact it into a small summary and then just delete the rest. So that small summary of the
+session history will remain in the session context, but the rest gets deleted. So it reduces all of
+the context a lot. It squashes it right down. Now, I find this useful if I'm working on a single feature,
+but the session starts to get really long and the context bloated. And then I can just carry on with
+the same feature in the same session using that compact summary. And it's still going to be there
+as context. The third option is to tap escape twice in the chat window. And this lets you
+essentially rewind to a previous point in the session and remove all later chats and files
+from the context. So this could be useful if you were working on a feature. Maybe you got
+sidetracked by a bug or something else. And you wanted to trim all of that last bit from the
+history in the context. So you could do that. So that's three approaches to keeping the context
+clean and focused. Now let me show you them in action. All right. So first of all, let's try
+double escape. So press it twice like so. And you can see I can go back in the chat. Now I
+cleared it earlier on. So that's why you see this clear. And that's the beginning. But you can go
+back to an earlier point in the chat by just pressing enter on any one of these. Now I'm going
+to escape to get out of this because I don't want to do that just yet. The next one I'm going to try
+is compact. So I'm going to use that compact command. And you can see also you can give this
+an additional argument right here or instructions as to how you would like this compacted. I'm not
+going to do that. I'm just going to press enter. And then you can see it's created a summary right
+here. And we can now have that in our context. But if we now press double escape, you can see
+this is the only thing left. So we have this, which is the original one, and then the compact
+command. So all the history has actually been cleared except for this bit of context that
+remains in the session. Alright, so let me escape out of this. And then finally, I'm going to use
+the clear command like so. And you can see here it says clear conversation history and free up
+context. I'm going to press enter. And that's going to get rid of everything. So now if I press
+double escape, you can see there's no history in the chat. Awesome. I also mentioned that one option
+would be to exit out of the current chat using forward slash exit and then just pressing enter.
+So that's going to stop the session and dump you back in the irregular terminal interface again.
+And if you start clod up again by tapping clod and then hitting enter, it's going to start on a
+brand new chat session with zero context added to it, except for that clod the md file. So you
+can start working on a new feature straight away. And then if you wanted to resume a previous chat
+session, you can use the forward slash resume command and then press enter. And that's going to show
+you all of the current chat sessions you have going on with clod code for this project, including
+when you last used that session, how many messages are in it, the branch is working on and a summary.
+So I could select one of these and then I get put back into that chat session with all of its
+previous context intact. Now there is one more small thing I want to quickly mention when it
+comes to context and that is something called the context window. And the context window represents
+how much context an AI model or tool can handle at once. It's measured in tokens where one token is
+I think about three or four characters in a word. Now the context window is generally different
+depending on which tools or models that you're using in clod code. The context window is 200,000
+tokens at this point in time, which is a fair amount. But if your sessions last a long time,
+have a lot of manually added context and back and forth, then that context window is eventually
+going to fill up clod code actually tells you when you're approaching this limit as well by
+giving you a little message. And when that happens, I've found the results to drop off a little bit.
+So if your session context is ever getting a bit bloated, remember those three things
+that we can do to reduce it, we can double escape to trim out any recent history and go back to a
+previous part of the chat session, we can use the forward slash compact command to summarize the
+context and significantly reduce it, or we can use the forward slash clear command to completely
+clear the entire context and start fresh. So then I think that's enough about context for now. And
+in the next lesson, we're going to talk about tools and permissions.
+
+========================================
+
+=== VIDEO 4/10: Claude Code Tutorial #4 - Tools & Permissions ===
+
+Okay, then gang, in this lesson, we're going to talk about the tools available to Claude
+code out of the box, and also how we can give project-wide permissions to Claude to use
+certain tools.
+So whenever we ask Claude code to do something, it generally uses some kind of built-in tool
+to perform an action.
+For example, to read a file, it would use a read tool.
+To edit a single file, it uses the edit tool.
+To run a bash command, it uses the bash tool, and we don't need to reference these tools
+when we send our prompts or messages.
+Claude code knows when it needs to use certain tools based on your instructions.
+Now, you might have noticed that when I've asked Claude to do some of these things in
+past lessons, like edit a file, it asks me for permission to do that thing before it
+actually does it.
+And we can either say yes or no, depending on whether we want to grant that permission
+or not.
+On the anthropic docs, it lists all of these built-in tools available to Claude code, and
+it outlines what each one does.
+It also shows you whether each of these tools requires permission before it gets used.
+For example, the bash and the edit tools, they do require permission, but read doesn't.
+So if I ask Claude code to look at a file, it's not going to prompt me to give it access,
+but if I ask it to change a file, then it will do.
+There's a tool down here, by the way, called toDoRight, and it uses that tool to make these
+little checklists of things it needs to do when you give it a task, to kind of keep itself
+on track.
+It's pretty nice.
+You can do them quite often as you're working with Claude code.
+Now again, you don't need to remember the names of all of these tools and what they
+do because Claude code is designed, so it knows what tool to use and when, automatically.
+But it is good to know the kinds of things that you can do out of the box, so I will
+leave this link down below the video.
+Alright then, so let's try doing something that requires permission, like editing a file.
+I'm going to ask Claude code to add another theme variable to the CSS file called highlight,
+which needs to be a pastel yellow color.
+I've also referenced the global CSS file right here as well for context.
+And when we send this off, as soon as Claude code figures out that it needs to edit a file,
+it's going to ask our permission to do it.
+Okay, so now it's edited the file, or rather it wants to edit the file.
+It's asking us right here, do you want to make this edit to global.css?
+So we have three options.
+We can select yes at the top, no at the bottom, and you can give further instruction if you
+want to, or this middle option yes, and don't ask me again this session.
+We'll go through that in a second, but for now, I'm just going to select yes to give
+it permission to make this edit.
+And because it's making multiple edits to the file, it's asking me to make further changes.
+So it changed one line, then it's going to somewhere else in the file, and it's making
+another edit.
+So again, I'm going to press yes.
+And it looks like it wants to update a third time.
+So again, we're going to press yes.
+And now it's all done.
+So for a simple set of edits there to just a single file, we had to
+grant permission three times, right?
+Now let's try doing a commit using the bash tool.
+So I'm going to ask Claude Code this time, can you make a commit like so?
+And this is going to do a few things.
+It's going to add the files to the staging area, then make the commit with a commit message.
+So you can see right here, it wants to use bash.
+It's looking for any changes.
+And then eventually it wants to use this command, git add.
+Now, this time when Claude Code asks for permission, I'm going to choose this second
+option, which is yes, and don't ask me again for git add commands.
+Now, if I choose this option, then it's going to carry on and do this git
+command, and it's also going to create a new file called settings.local.json
+inside a dot Claude folder in the project.
+And inside that file, there's going to be a permissions object with a property
+inside it called allow.
+And that allow property should be an array of allowed commands for the project,
+meaning if Claude Code tried to run this bash command again in the project,
+it wouldn't need to ask for permission because we've allowed it here.
+So as Claude Code asks you for permission to do different things,
+you can select that second option to add the command to the allowed
+list inside the settings file.
+You can also manually add commands in there yourself as well.
+And this would just be for your workflow, by the way.
+You wouldn't commit this file and push it up.
+Something else you can do is press alt and M on Windows.
+It might be controlling M on a Mac.
+And that's going to turn on this accept edits feature.
+And now when you ask Claude Code to make changes,
+it's not going to ask for permission to do that, to edit your files for this chat session.
+If you start a new session, it will ask you again until you turn this feature on.
+You can turn it off again by hitting alt plus M twice.
+So then that's a quick breakdown of tools, permissions for those tools,
+and how we can edit those permissions for the project inside the settings file.
+Next up, we're going to look at how Claude Code can plan and think for more complex tasks.
+
+========================================
+
+=== VIDEO 5/10: Claude Code Tutorial #5 - Planning & Thinking ===
+
+Okay, so in this lesson, we're going to talk about two things that Cloud Code can do.
+Planning and thinking, which are both two very different things.
+Thinking is when you ask Cloud Code to think about a solution before writing any code,
+and planning is when Cloud puts together its own plan of action on how it intends to implement
+some features and asks you to approve it.
+So let's start with planning, and you might have caught a glimpse of this at the end of
+the last lesson where we used Alt plus M to cycle through the auto-edit option down here.
+So if I press Alt M once, I turn on the accept edit feature, but if I press it twice, we
+go into the planning mode instead.
+Now, planning mode is good for when you're giving Cloud Code a task which has a wide
+breadth of changes over several different files, but where individually, each of those
+changes might not necessarily be complex.
+They could be, but maybe not.
+Still, the scope of those changes might be quite wide, and with a plan, it makes easier
+for Cloud Code to stay on track and complete each task in order.
+So then, let's keep planning mode on, and we're going to ask it to do the following.
+Can you make a custom component for an avatar, no pick, only initial, and find any places
+in the project where it can replace avatar-like templates?
+So I'm going to press enter now and see what it comes up with.
+So first of all, it's analysing the code base to understand where an avatar component could
+be useful.
+So it's searching things, it's reading different files.
+All right, and now it's come up with a plan right here.
+So if we scroll to the top, you can see it's discovered avatar-like implementations in
+the blog system in a few different places, in the blog postcards, and also in recent
+activity in the sidebar.
+So it's detected those, and then it's proposing this avatar component, so it's in the correct
+place inside the UI folder, then an avatar folder, then avatar.tsx.
+So it's going to have the initial-based avatar, which is going to be the first letter from
+their name, multiple sizes, colour variants, consistent styling.
+So it's kind of following the same pattern as the button component, which is nice.
+So for the implementation plan, it's going to first of all create the avatar component,
+then replace the existing avatar code in the blog postcards, and it even specifies exactly
+where it's going to do that for us.
+Then it says it's going to work on the blog sidebar, and it's going to add the avatar
+to individual blog posts as well, inside the blog post details page.
+Then it's going to create a test file to follow the existing button test patterns, so it can
+be tested on the avatar component as well.
+And then we're going to add a link to the avatar preview in the header navigation.
+So you can go ahead and accept this plan, or you can accept the plan, but then keep
+manually approving any edits, or you can say no, and keep planning and provide feedback
+for the plan, so it adjusts the plan.
+So I'm going to select the first option up here, which is yes, and auto-accept edits.
+OK, so down here it is saying it wants to run this bash command npm run test, and I want
+to select the second option, which is yes, and don't ask me again for npm run test commands.
+And when I do that, it should automatically go into the settings.local file right here,
+which we can see it does awesome.
+All right, so this time it's trying to link the file, and again, I'm going to choose the
+second option down here.
+OK, and then finally, it looks like it's done.
+So it's checked off everything from the plan it created.
+All the tests are passing.
+And if we close this off and take a look over here, we should be able to see that new avatar
+folder.
+And OK, so it's actually created a full page for the avatar.
+Now, maybe that was in the plan, and I didn't fully understand it.
+I thought it was just going to add it to the preview page, but you see, this is where
+sometimes AI can go wrong, cloud code, co-pilot, whatever you're using.
+So it's important to keep it on track.
+Either way, it doesn't so much matter for this particular task.
+It's just to preview it after all.
+And I can delete this page afterwards.
+But you can see we've got this component folder down here, avatar.
+We've got the test file and the avatar component itself.
+So we've got the default size right here, set to medium.
+The variant is gradient.
+But we have these different variant options up here in different sizes as well for the
+props.
+We have the size classes, the variant classes.
+And then down here, we have the avatar itself.
+OK, so let's see if this works in the browser.
+All right.
+So you can see I did the avatar page and the link to the header.
+So it did get a little bit trigger happy.
+And now if we take a look down here, we can see all the different variants that we have,
+the different sizes, even use cases down here.
+So I think this is all really, really nice.
+It's created that component and shown us different ways we can use it.
+Now if I go to the actual blog part of the website, you can see it's now using that avatar
+here.
+It's using it down here as well inside of recent activity.
+And if I was to select an individual blog like this one right here, you can see we have
+the avatar on the blog details as well.
+So the only thing it did really that I didn't want it to do was place the avatar link up
+here and create a full page for the avatars when I specified in a clod.md file that they
+should go inside the preview file.
+So maybe I wasn't specific enough.
+Maybe I looked over the plan too quickly.
+I don't know.
+But this is easy to rectify.
+I can just delete these pages.
+No problem.
+So I just told Claude Code to remove the avatar page and instead put all of the samples inside
+the preview page.
+And it's going to head and done that, which is good.
+I've also updated the clod.md file with this more specific instruction at the bottom, which
+says now when making new page components always had a link to that page in the header.
+So it did this for our UI component.
+So I added this bit on only do this for page components, not UI or other dropping components.
+So I guess this is a lesson in instructions and also in how you have to be specific in
+what you want Claude Code to do.
+Okay.
+So that'll work pretty well.
+I think having plan mode turned on probably helped Claude Code complete the task correctly.
+Now it may still have done so without planning mode on, but when it is turned on, I find
+it's worth to stay on track more for tasks with a wider scope.
+And arguably the scope wasn't huge for this task, but it's still involved making a component,
+testing the component, looking for places it can be used, editing those files, etc.
+Anyway, now let's look at thinking mode.
+Now thinking mode is good when you want Claude Code to work on something that includes more
+complex logic.
+So not necessarily a wide scope like planning mode is for.
+It could be quite a narrow scope, but one where the logic is more complex.
+For example, I might want to implement a comment system for the blog where users can comment
+on the blogs.
+And that would include perhaps some thoughts about exactly how it should be done, what all
+services, if any, should be used, what react components need to be made, what additional
+pages might need to be made, what about live updates, and how does this get structured and
+fit well together in this application.
+So for something like this, you would turn on extended thinking mode, which does consume
+more tokens, but it allows the model to reason and think more about how to complete something
+in a way that actually works.
+Now to be honest, we're entering into the realms of vibe coding when we ask the AI to
+implement a whole system like this, and I would personally break this down into smaller
+chunks of tasks and work on each one one at a time with cloud code so I could more easily
+guide the AI to do what I want it to do.
+But for the sake of this lesson and to demonstrate thinking mode, we'll run with this example.
+So let me paste in this prompt right here, first of all, which says implement a comment
+system into the application where users can authenticate and then comment on blog posts.
+Think hard about this implementation, including the database schema, authentication services,
+moderation, and real-time updates.
+I'm also going to keep planning mode on so I can see the plan that cloud code makes as
+well.
+Now, I'm triggering think mode in this prompt by using the word think right here.
+And whenever cloud code sees that in your prompt, that word, it's going to use extended
+thinking mode.
+So then let me press enter now and we'll see what cloud code does.
+All right.
+So already in this kind of gray color, you can see it's thinking and this is the thinking
+process that it has kind of behind the scenes.
+So by using that think keyword in our prompt, we've enabled this thinking mode.
+All right.
+And now it's come up with a plan.
+So that took a little bit longer, but it's because cloud code was thinking.
+So this is the plan and it's quite extensive.
+There's a lot of steps involved, all right, and anything in a kind of faded gray up here.
+This is all of Claude's thinking and it also prefixes that, if you like, with this little
+thinking text right here.
+So every time it's thinking about something, you'll see that, all right, thinking, thinking.
+So it thinks quite a lot.
+So then I'm not going to go ahead with these changes because that would drastically change
+my project right now.
+And I'd also have to set up some external services as well.
+And again, because I wouldn't normally let AI completely loose on tasks like this, I don't
+know which direction is going to go off in.
+Instead, I would break it down into logical steps, maybe taking each of these checkpoints
+in the plan and working on them individually.
+That way I can stay in the loop, check the code in small steps manually, and make changes
+myself where I need to along the way.
+Doing everything at once sometimes makes things hard when they're long run.
+And I find that pretty soon you're out of the loop and you get sucked into this kind
+of full on vibe coding experience where you're just asking Claude to fix everything and ignoring
+the code completely.
+So I'm going to choose not to do this now.
+But just very quickly, before we finish this video, I want to mention that Claude code
+does have different levels of thinking that you can activate.
+And the example I just used, I said, think hard.
+But you can also just say think, and that's going to trigger a smaller amount of thinking
+and reasoning.
+Likewise, you can go the other way by saying think harder, and that's going to crank the
+thinking up even more.
+And if you want to go all in, then you can ask Claude to ultra think, which activates
+the hardest thinking mode it has.
+But again, remember that thinking consumes more tokens.
+And the harder you ask Claude code to think, the more tokens it's going to use up.
+All right then.
+So now we know a little bit about planning and thinking.
+Next up we'll talk about commands.
+
+========================================
+
+=== VIDEO 6/10: Claude Code Tutorial #6 - Slash Commands ===
+
+Okay then my friends, in this lesson we're going to talk about something called slash commands which I'm just going to call commands from here and out because it's much shorter.
+And we're also going to make a custom command as well.
+So then, we've already seen and used several built in commands that Claude code gives to us out of the box.
+And we've done that by typing a slash, then whatever the command name was, for example, clear to clear the context or init to initialize a Claude MD file.
+Now, if you just type slash on its own, then you're going to see a list of all the available commands that come with Claude code.
+And you can key up and down to go through these.
+So we've got add dir to give Claude access to another working directory, which in essence, it allows multiple repository development then from one location, which could be useful if you have related projects like a back end and a front end.
+We've got forward slash agents for managing sub agents, which we will see later on in the course.
+There's clear and compact down here, which we've used already.
+There's a model one, which if we use allows us to choose which model we want to use.
+I've got site for selected at the moment.
+And also, you can escape these screens by just hitting the escape key.
+There's also a permissions one somewhere, which we can use to add permissions for different tools in Claude code for this project.
+And that adds those permissions to the local settings file for you when you set them up this way.
+I normally just manually add them myself.
+But anyway, I'm not going to read all these different commands now because there's way too many and we will be using some of them in future lessons, but definitely take a look through and have a little play around with them.
+The thing I'd like to focus on in this lesson is making a custom command, which we can add to this list.
+And we would make a custom command for common tasks we might perform in the project.
+For example, in this project, I might be making a lot of UI components.
+So I could make a command for generating those components, which includes a detailed prompt, any context needed, and any other specific details I can pass to the AI model.
+Then whenever I need to make a new UI component, I can just use that custom component command to do it.
+So let's give this a shot.
+The first thing we need to do is make a commands folder inside this dot Claude folder.
+And if you don't see that dot Claude folder already, you can go ahead and make that too.
+Then inside the commands folder, we can make a new markdown file called whatever we want the command to be named.
+For example, I'm going to call it UI-component.md.
+All right.
+So now inside this file, we can give Claude code whatever instructions that we want to make a new UI component.
+So I could tell Claude where the file should go, the naming convention, any component variants I want, how to test the component, etc.
+For now, I'm just going to paste in a simple set of instructions, which tells it to make a new single UI component in the component folder and then in the UI folder.
+And I say that the component should be a functional component with the name in Pascal case.
+I'm also telling it to add the following variants and sizes for the component using the colors from the theme variables in the CSS file.
+And notice how I'm using the at sign to load in another file as context here.
+You can do that in these custom commands.
+Then I tell Claude to make a test file for the component as well.
+And I want it to run the test until they all pass.
+Finally, I ask it to add the component to the preview page so that we can preview it in the browser when we're done and not add it anywhere else in the project.
+Because sometimes Claude can get giddy and he wants to use this new stuff everywhere else too.
+So by adding this, it's just going to get added to the preview page.
+And all this, by the way, is just like a really big prompt.
+When we use a custom command, Claude code essentially pulls in this markdown file and it uses it as a prompt.
+All right, so let me close this file and we also need to restart a new Claude session for it to pick up on this new tool that we've just created or this new command rather we've just created.
+So exit out of the current session, then start Claude back up again.
+All right, so now if we do forward slash, we should see the new command that we just created this one right here UI component.
+So I'm going to tap on that and then I'm just going to press enter to run this command.
+And notice though, nowhere in the command did we say what kind of UI component to make.
+So it's basically just handing the reins over to the AI to make whatever component it sees fit.
+All right, so we can see that it's decided to create a card component.
+So let's go ahead and let it do this.
+If you wanted it to do something different, you could say no and tell Claude what to do differently.
+We're just going to press yes and don't ask again for make the commands in this project.
+Okay, and we're going to allow it to make these changes.
+And now it wants to run this bash command to test out the component.
+Okay, so it looks like it's all done.
+It's created the card component, the test file.
+It's got five variants, three sizes and all the tests have passed.
+It's added the preview to the preview page as well.
+Let's just check over here that everything is added before we preview this in the browser ourselves.
+So if we go to UI, we can see the card folder and the card file over here.
+So this is the component.
+And again, I would normally just go through this thoroughly, make sure it is coded how I would want it.
+Same for this file.
+Any content that Claude generates, I would just have a look through.
+Then if we go to app and then go to preview, we can see we've got changes in the page file.
+So somewhere in here, there should be a new card component probably right at the bottom.
+So let's scroll all the way down.
+It's a big file now.
+But there we go.
+We can see the different variants of the card component.
+So now let's see what it looks like in a browser.
+All right, so I'm just on the preview page.
+And if we scroll right down, we should hopefully see these cards.
+Yeah, we do.
+So we can see these different variations as well.
+They all look pretty nice to be honest.
+So we've got primary, secondary, success, warning card danger.
+And they've all got a little hover effect as well, which I quite like.
+We've got different sizes, interactive cards.
+Wow, that's quite nice.
+Disabled card, feature cards with little icons on them.
+So it's done a pretty extensive job here.
+And I could easily see myself using these kind of cards in this project.
+Let's just check what they look like in dark mode.
+So let's click on this.
+And if we scroll right down, yeah, we've got dark mode variations as well.
+Awesome.
+All right, so that worked and it looked okay.
+But currently, whenever we use this command, we're getting a mystery component.
+We don't know what it's going to be, and we're passing that decision to cloud code.
+Instead, when I use this command, I'd like to specify exactly what UI component that I want.
+So for example, I would say forward slash UI hyphen component,
+and then something like card with maybe a brief description as well.
+And we can do that using command arguments.
+So if we open up the command file, I'm going to add this little section at the top of the file.
+And there's a few things we need to go over.
+First of all, we've got this front matter at the top of the file,
+which is a markdown feature that lets us supply a kind of metadata for the file.
+In this case, we've got two properties inside the front matter.
+Description, which is what the command does, right?
+And an argument hint to tell us what kind of arguments are expected when we run this command.
+Now, both of these are going to show up in the chat interface
+when we use the tool to remind us of what this command does and what it needs.
+Next up, I've added this new context section where we instruct Claude code
+to pass this dollar sign arguments variable to get some values.
+Now, this arguments thing is how Claude code captures whatever arguments we pass into the command when we call it.
+And it doesn't matter whether we pass one, two, or five arguments,
+they're all caught within this single dollar sign arguments value.
+In our case, I want to be able to pass two arguments,
+a name and a summary of the component we're making.
+So we somehow need to pass those two arguments from the arguments value.
+Now, I've not seen any official guidance on how to pass multiple values from this on the docks or anywhere else,
+but I've found the following method works really well.
+I use square brackets to essentially create variables with values
+where the name of the variable is the thing in the square brackets
+and the text on the right is telling Claude code what to store for this.
+This is actually how we make reference links in Markdown,
+but I also find it works well for this kind of thing.
+So we're telling Claude code to try and pass the arguments to find and store these values,
+which means we can then use them down here in the instructions.
+So I'm now just going to highlight all of this task part, delete it,
+and replace it with a new instruction incorporating those argument values.
+And I still tell it to make a UI component,
+but this time I tell it to use the name and summary values.
+First for the folder and file names, second for the component name,
+and lastly, I tell it to reference the summary when making the component itself.
+So now when we call this command from Claude code,
+we can pass in the arguments which then get passed and then used by the AI
+to come up with the component using those values.
+Before we do that though, we need to exit Claude and restart it again
+because we made a change to the command file.
+So exit out and then fire it back up.
+Okay, then so now if I press forward slash, we can see UI component
+and it tells us create a UI component in this directory.
+I'm going to press tab on this
+and you can see it's given us a hint for the arguments it expects now.
+So let's make maybe an icon component.
+So it should be called icon.
+Then I'm going to do a pipe to do the second argument
+and I'll just say an icon component for showing icons with a circular background.
+Let's see what it does for that.
+And let's press enter.
+All right, then so it's asking to make edits.
+So I'm going to select the second option and press enter.
+Okay, so it looks like it's done everything.
+So let's close this and also this and see what files it's created and changed.
+If we take a look inside the UI folder, we can see now we've got an icon folder.
+We've got the test file and the component itself.
+So we have the variants that we can pass in the size.
+We have the on click.
+We also have a class name as well.
+They're the icon props.
+Okay, let's have a look around here.
+So the child I think will be a icon itself.
+I think let's have a look what it's done inside the preview page.
+Scroll right to the bottom where the icons are.
+Yeah, it's added them.
+Okay, so we have these little emojis embedded into the icon.
+So I guess whatever icon we want, we would output it here,
+whether it's an emoji or some icon from a package that you might use.
+All right, so I'm just on the preview page again and I'm going to scroll right the way down.
+All right, so we can see these icons right here and they look okay.
+I think instead of using emojis, I would probably have used some icon package.
+I would have preferred that.
+And to be honest, that's something I would have just gone back and told Claude
+and it could have edited those files again.
+And it would have updated it to make it work correctly as I see fit.
+And that's the importance of staying in the loop,
+looking what it's doing and not just accepting everything it does by default.
+And in fact, I couldn't help myself.
+I've just been back to the code.
+I've asked Claude to change it and use an icon library instead.
+And if we take a look at these now, I'm hopeful that they're going to look a little bit better.
+Here we go right down.
+Okay, there we go.
+Yeah, that looks loads better.
+We've got all these different variants.
+We've got different sizes, interactive icons.
+We've got action bars, different ways we can use them.
+Yeah, they all look loads better.
+Anyway, I think that's enough on commands and custom commands.
+And in the next lesson, we're going to look at MCP servers.
+
+========================================
+
+=== VIDEO 7/10: Claude Code Tutorial #7 - MCP Servers ===
+
+Alright then gang, in this lesson I want to talk about something called MCP and MCP servers,
+which can give cloud code the ability to connect and communicate with external data sources,
+services and APIs. For example, when I'm working with cloud in this project right now, it knows
+about my project and it can use all its built-in tools to make changes and run bash commands
+and whatnot. But those tools only extend to the scope of this code base, right? And there's
+no tools for cloud code to interact with external data sources, third-party services or APIs. I can't
+tell it, for example, to reach out to a database to analyze my tables or even create a new one for
+me, because it doesn't have the tools to do that. But that's where MCP servers come into play.
+So just very briefly, MCP stands for Model Context Protocol. It was designed by Anthropik,
+who made cloud code, and it defines a way that AI models can interact with external sources. And
+we do this by providing them with additional tools and context through MCP servers. And different
+MCP servers come with different tools to do different things and interact with different sources.
+So you can think of an MCP server as something you can essentially plug into cloud code or whatever
+client you're using, and then cloud, directed by the AI model, can use whatever tools the server
+provides to interact with some external data source. For example, the super-base MCP server
+contains tools to do things like list tables, deploy edge functions, and even execute SQL commands.
+So if I installed the super-base MCP server, cloud would have access to all those tools,
+and I could say to cloud code, read the blocks table in super-base, make an interface to model
+the records. And in response, cloud would check for any tools it can use to do this, and it would
+find one in this super-base MCP server. It would then use that tool, which is just a function
+defined within the server, to reach out to the database and find the blocks table. It would read
+it and then return the format of that table to cloud code. And then using that data, cloud code
+could decide how to make the interface. So when we use MCP servers, it's not the AI itself or the
+client like cloud code that reaches out directly to these external sources. It's the MCP server
+that does that. And then it provides cloud code or whatever client you might be using with the
+ability to call and use those tools. Another MCP server called Playwright provides AI models
+with the tools to open a browser, navigate through webpages, inspect elements, take screenshots.
+The Context7 MCP server provides tools to get up-to-date documentation from a lot of frameworks
+and libraries, which you can then ask cloud code to use when implementing new features using those
+frameworks or libraries. And there's loads more too, which you can find on websites like this one,
+pulseMCP.com. So definitely check that out. We're going to install these two servers right here,
+Context7 and Playwright. And over the next couple of lessons, we're going to put them to use in our
+workflow. First though, how do we actually add the servers? Well, if we take a look at the cloud
+code docs on the MCP installation section, you can see that we can add them locally on our computer
+or by connecting to them remotely. Now, we'll be adding the servers locally, so we'll be using
+this option at the top. And the way we do this is by using the command cloud MCP add and then
+whatever the server name is, then the command and any arguments. Also, if you're on Windows,
+then you're currently, you'll need to add one more thing, which if we scroll down here, you're
+going to see in a big yellow warning box, and that is to add cmd and then forward slash c. So the cmd
+part opens the Windows command line to run the command, the forward slash c part makes sure
+the shell gets closed after it's been run. Now, normally when we use an MCP server, the server
+docs gives us the whole string to copy and paste in a terminal, which is then going to add the server.
+But just be aware that you might need to add the cmd forward slash c part if you're on Windows
+for servers that use NPX. Otherwise, it might not work correctly. Anyway, let's head back to the
+Context7 MCP page and we're going to see what it says there about the installation. So if we click
+on this MCP link up at the top, it should take us to the GitHub page for the server, which it does.
+And then if you scroll right down, we should eventually see a bunch of options for adding
+the server to different clients. One of those options should be clod code. So click on that to
+expand it, and we're going to get a few different options. The first two are for remote server
+connections. The one at the bottom is for a local connection. So we say clod MCP add, then the server
+name, which is Context7. Then we have this double dash, then the NPX command. So we're going to copy
+this now and paste it into the terminal. And then we're also going to make a few edits. So then I've
+pasted this into my terminal already. And I'm just going to add another few things in. The first thing
+we'll do is we're going to add another flag to this just before the double dash. And that is the
+scope flag. So when we add MCP servers with clod code, we can add them to three different scopes,
+project scope, where the MCP setup gets pushed to remote and everyone working on the project can
+use the MCPs added to the project, local scope, which is where only you can use the MCP server on
+this particular project, and global scope, which is when the MCPs added globally to clod code and
+you can use it for any project on your computer. Now the default scope is local, but I want to
+make it a project scope so that we can see the MCP configuration here in the project directory.
+And mostly I use either project or global scope. I very rarely use local scope. Anyway,
+to add this scope, we use the scope flag followed by project to specify project scope.
+And again, this could also be local or global. Now before we go any further, I will say this,
+if you're running clod code natively on Windows, it can be a little bit buggy when you're adding
+MCP servers, at least at the time of recording this video. If you're on a Mac, then you probably
+won't have to jump through any hoops or workarounds and you can just hit enter right now, and this
+would work. If you're on Windows, though, you have to do a few more things for it to work properly.
+First, we have to add the cmd and then forward slash c bit just before the rest of this npx
+command, like we talked about earlier. Secondly, if we run this right now, we're going to get an error,
+which I'll show you by hitting enter. And that error says there's an unknown option,
+y, which comes right after the npx bit. Now the y flag is for auto accepting defaults to prompts
+when some package is installed. And it needs to be there in this case. So how do we get around this?
+Well, one solution is to run the whole thing without the y flag first,
+which we'll do now. And when we do that, it's going to work and clod code makes this mcp.json
+file in the root of the project. Now if we take a look at that, we'll see this json object with
+an mcp service property inside. And it's within this property that all project level servers
+get added. So we can see this context seven one right here that we just added. And inside that
+the servers configured with these different properties. The type is standard in out since
+this is a local mcp connection that we added. The command is cmd. And that's because on Windows,
+we added that extra cmd part. Then we have some arguments, including the forward slash c bit,
+which we also added because we're on Windows. Now again, if you're on a map, this will probably
+look a little bit different and you won't need to make any changes. But on Windows,
+because we remove that hyphen y flag, we should now manually add this in to the arguments array
+after the npx one. So let's do that now and then save the file. Right then. So hopefully now that's
+all going to work when we start up clod code. But I do think this whole work around when using
+Windows is a little bit clunky. And I'm hoping that it's something that can be made simpler in the
+future. And maybe when you're watching this video, it will be anyway. Now let's try using this. Now
+when I've just tried using this mcp server, I got some kind of connection error. It failed. It didn't
+work for whatever reason. So I'm actually going to use the remote server from context seven. It's
+strange because when I tried this out before recording, it did work. Everything was fine.
+But this is the problem sometimes because clod code is new, mcp servers are new, they're changing a
+lot. Sometimes things can just not work. And it might take a little while for things to level
+out. So what I'm going to do now is go back to the docs and look for the other command I need to run
+for a remote server. So we're going to go ahead with this one right here, which uses HTTP as the
+transport system. So let's copy this. All right, so I've pasted that into my terminal, but I'm going
+to add one more thing. And that is the scope flag after the server name. So after context seven,
+do double dash, then scope, and then project to add this at a project level, press enter.
+Hopefully now it's going to add that server for us. And if we close this terminal and take a look
+over here, we should see the mcp.json file. And yet we see that context seven property inside.
+This time the type is HTTP because we're using a remote connection. And this is the URL for the
+server as well. Cool. So now we need to start Claude back up, which I'm going to do over here
+by tapping Claude and then press enter. Let's get rid of the file tree. And then inside here,
+I'm going to say forward slash mcp. And this time hopefully we will see the context seven. Okay,
+it failed to connect. What I'm going to do is press enter. And then I'm going to reconnect to this
+to see if it does connect this time. Okay, looks like it's worked. So forward slash mcp. Now we
+can see a green tick next to that we're connected to context seven and we can start using it. So
+let me escape out of that. Okay, so now I'm going to get Claude code to use context seven by tapping
+this prompt. And it says can you check the latest tailwind docs to see if the theme variables are
+correctly configured in the global CSS file use context seven. I'm also going to reference that
+CSS file so it knows where to look. So that source app and then globals.css. And then I'm going to
+press enter. But before I do that, notice I said use context seven. That's so it explicitly knows
+to use that mcp server to get the up to date information. So let me press enter to do this.
+And now it wants to use this resolve library ID tool from context seven. And then it wants to
+use an additional tool and it wants my permission to do this. So I'm going to press yes right here.
+And now you can see right here, it says looking at your tailwind CSS configuration,
+your theme variables are correctly configured. Blah, blah, blah. It's properly structured.
+Okay, so everything is as it should be awesome. So one thing I like to do with context seven is
+tell Claude code to use it whenever it needs to implement some feature using a third party
+framework or library because a lot of the time it can use legacy code. So I want to make sure that
+it uses the up to date documentation every time that it creates some code using those frameworks.
+And that's not just Claude code, by the way, that's any AI tool or model, they can all use
+legacy code because they're trained on that legacy code. So what I'm going to do is add a memory using
+the hash over here. So if I press hash, we're going to add a memory. And then I'm going to paste in
+this memory that says use context seven to check up to date docs when needed for implementing new
+libraries or frameworks or adding features using them. So if I press enter, we're going to add that
+to the project memory. And if we then open this file up, we should see that at the bottom now.
+Yep. There it is. Awesome. Okay, then so now we're going to add another server called playwright,
+which provides Claude code with the tools to do things like open a browser, click on links,
+take screenshots, etc. So I'm on the playwright MCP page right here. And for Claude code,
+it says run this command, which because we're on Windows, we're going to have to tweak again.
+I also want to make sure we're using project scope when we add it. So copy this command,
+then head back to your terminal. So then I've already added this command in, as well as two other
+things, the scope flag, first of all, over here to say we want to add this at project level,
+and then also the CMD forward slash C part, because we're running this on Windows. This
+time we don't need to add the Y flag for this particular server. All right, so now let's hit
+enter. Hopefully that's going to add the playwright server to the mcp.json file.
+So let's take a look at that over here. And yet we can see we've got the context seven one now,
+and also the playwright one. And this time the type is standard in out the command CMD,
+then the arguments down here. Awesome. So then now we need to start Claude back up again,
+so that we can try using this. Okay, so I've started Claude up. And the first thing I'm going to do
+is use the mcp tool to make sure that they're connected correctly. Yep. Okay, cool. And now
+I'm going to escape. And I'm just going to ask Claude code to maybe open a browser and navigate
+to net ninja.dev and give me a summary of the sites. So this is just to show you that it can
+navigate to a site using playwright or playwright can on its behalf and provide feedback that we
+need. So it's going to ask for permission first of all. So we'll say yes. And then on my other screen
+it's opened up net ninja.dev, which we can see right here. So it's just going to do its browsing.
+I'm going to take that back off screen. All right, so now it's come back with a little bit of
+information. It says net ninja is a comprehensive coding education platform created by Sean focused
+on web development training the site positions itself as a coding dojo where aspiring developers
+become coding ninjas. So I'm quite pleased with that. It gives us this other information about it
+as well, which is quite extensive to be honest, but playwright can do more than just this. And
+what I'd like to do is use playwright to give us feedback on the UX of components that we make
+when it views them in the browser. So in the next lesson, what we're going to be doing is making
+our own sub agent with Claude code. And we're going to be using the playwright mcp from within
+that sub agent to do just that.
+
+========================================
+
+=== VIDEO 8/10: Claude Code Tutorial #8 - Subagents ===
+
+Okay then gang, in this lesson I want to talk about something called sub-agents
+which are really cool and they allow you to basically create a whole team working
+on your project where each sub-agent can have a different area of expertise that
+can be isolated and configured to work on certain tasks. For example we could
+make a unit test agent whose expertise and function would be to really hone in
+on writing and running tests or we could make a sub-agent who specializes in
+security audits. We could make a UX reviewer who specializes in providing
+feedback for new components by viewing them in a browser etc. Now each of these
+sub-agents all run independently from each other, they have their own system
+prompts, tools they're allowed to run and their own contact window. So there are
+really good way of isolating certain workflows and tasks and what's really
+cool is that cloud code can delegate tasks to them when it needs to. So you
+can kind of think of cloud code as being maybe a senior developer working on
+tasks who then instructs the sub-agents to carry out certain work and one of
+the main benefits of working this way is that each sub-agent has a specialized
+expertise which we can fine-tune to excel in a particular area through detail
+system prompts. Also because each sub-agent has their own isolated contact
+window it keeps their context clean and focused leading to I think better
+results a lot of the time. It also means the main thread stays cleaner and
+trimmer if we do this correctly because we're delegating tasks to those
+sub-agents so it reduces the context overload in your main session. So then in
+this lesson we're going to make a sub-agent who can use the Playwright MCP
+server to preview and review the UI and UX of new components once they've been
+made and the workflow is going to look something like this. We're going to use
+the custom slash command to tell cloud code to make a new UI component for us.
+Inside that command we're going to add an instruction telling it to invoke the
+UX reviewer sub-agent to review its work after it's made code edits. That sub-agent is
+going to use Playwright to open a browser and look at the component from a UX
+perspective. Then it's going to provide feedback to the main thread on cloud
+code which will make edits to the component based on that feedback. If
+needed it can ask the UX reviewer again to review the code or review the
+component in a browser and provide more feedback until eventually everyone's
+happy and the component is finished. So let's give this a whirl.
+So then let's start by making a new sub-agent which we can do by coming into the
+cloud code chat session and using a command which is forward slash agents. Now
+when we do that we're going to see a list of agents you've already created. Now
+we've not created any so we can make one by selecting this create new agent
+option. Once we've done that we can choose a scope for this new agent either
+project or personal. I'm going to select the project scope so that anyone
+working on this project can use the sub-agent. Then we're going to get two
+options. You can get cloud to generate one for you or you can manually make one
+from scratch. Now what I'd like to do is have cloud make one for me then just
+change it where I see fit. So let's select that first option and then we're
+asked to describe what this agent should do and when it should be used and I'm
+just going to paste in a summary of this agent now which says expert UI and UX
+engineer who reviews the UI and UX of react components in a browser using
+playwright takes screenshots then offers feedback on how to improve the
+component in terms of visual design user experience and accessibility. So then
+I'm going to hit enter and cloud codes are going to go ahead and make this new
+agent for us.
+Now at some point it's going to ask you what tools you want to provide your
+agent with and the default option is to allow all tools but I'm going to
+unselect the edit tools because I don't want to give the agent the power to edit
+files. I only want it to review the components
+and offer feedback. It's also going to ask you which AI mode you want to use for
+the sub-agent and I'm going to select the Sonnet 4 model.
+Then it's going to ask you what color you want the sub-agent to use when it's
+providing updates in the terminal. I'm going to go for the purple color you
+choose whatever you want and then finally it's going to give
+you a summary of the agent it's making
+which you can confirm by pressing enter. Okay so we can see that now we have
+this project agent called ui-ux-reviewer that uses the
+Sonnet model. Let's close this off and if we open up
+this file tree we should see inside the cloud folder an agents folder
+with this markdown file for the agent. So we've got some front matter at the top
+which is the name of the agent a description
+and then down here the tools that it's allowed to use.
+Now it's added the playwright one right here or a few of the playwright tools
+rather because we specifically said in the summary we want it to use
+playwright. The model and the color then a bit of
+a description down here then we've got the actual workflow so
+the setup the visual documentation how to analyze
+some testing methodology we're not going to read all this
+but essentially it's created this for us and the job of this agent now is to
+review components using the playwright mcp
+in a browser and you can edit this by the way
+if you want to it's basically like a gigantic prompt
+for the sub agent which gets used when the sub agent gets invoked
+so by all means go through this and just edit anything that you don't agree with
+or any additional information that you want to add just add it.
+Okay so now we've got this sub agent created we can go back to the custom
+UI component command we created earlier in the course
+and remember this command instructs claud code to make a new UI component
+based on certain criteria and now at the end I'm going to paste in one final
+instruction which tells claud to invoke the new sub agent we just
+created and ask it for feedback. Once it has that
+feedback it should implement it by updating the component
+and then finally if it needs to it can ask for another review and more feedback
+so then now everything is kind of set up and ready to go so let's give this a
+shot and remember we need to exit out of claud code first of all
+because we just made a change to this command and then we're going to start
+the session back up again. Alright then so let's use the UI
+component tool if I can spell it components
+like so and then the component name is going to be
+modal and I'm going to say make a clean modern looking
+modal which also has a semi transparent
+backdrop. Alright so press enter
+all right and we can see already that it has a little to-do list that it's
+going to work on and right at the bottom down here
+it's going to say review the component with the UI
+hyphen UX hyphen reviewer agent so that's the final step.
+Okay so it wants to do something yep we'll allow that
+and I'm going to allow for the rest of the session.
+Okay so now you can see it's invoked this UI UX reviewer
+and that reviewer wants to open up a browser now in order to do that it wants
+to start the dev server so I'm going to let it do that
+and now it wants to navigate to the preview page which is where Claude
+code added that component to when it created it so
+let's allow it to do this and now on my other screen I can see it's
+opened up the browser it's over here you can see
+all right and it's asking me for permission to
+take a screenshot yes I'm going to allow it to do that
+so something else you can do through playwright is
+click elements on a page and now it's asking for permission to do that so
+we'll say yes
+and this is taking a long time by the way because there's so many different
+variants that Claude code created for this model there's about seven or eight
+different things it needs to do on the web page to test everything
+all right and now it wants to resize the browser width so it's even testing
+for smaller device screens which is really nice so I'm going to allow it to do
+that
+all right so eventually it finished its review process
+and you can see now it's made some additional edits
+and these are all the features it's implemented
+so we've got the color variants we've got the different sizes
+we've made sure it's good for accessibility we've got these different
+interactions so we can close via the cross button escape key or the backdrop
+click these are the files created for the model
+and the test and then it's updated the page the
+preview page right here to have interactive demos
+so it says right here the ui ux reviewer gave it a five out of five stars
+and marked it production ready well that is really good so it obviously did a
+good job of making these components so now let's view these in a browser
+all right so I'm just on the preview page and I've scrolled all the way down to
+the modal components so we've got buttons here to open the
+modules so I could click on primary and yeah that looks pretty good
+so we can close it via the cross or clicking over here
+I'm going to try the secondary one and then press escape yeah that closes it
+confirm all right and then we'll click on cancel
+and then final it will click on the cross so we've got these different variants
+which is really nice different sizes so that's small
+medium I think that's a little bigger large yeah a little bit bigger again
+all right so these are the features it's implemented so that's nice
+it's kind of documented it for me as well so these are actually using I think
+the card component because the card components are up here
+so you know like I said earlier on in the series that clod code
+does get a little bit giddy sometimes it likes to use the work it's done
+elsewhere in the application so I think this is just an example of that it's
+reusing the card component to tell me about this modal component it just
+created so kudos that's very nice anyway all looks pretty good
+maybe I would make some tweaks here and there but I think it's done a good job
+of creating and also testing this component in the browser
+and one more thing really quickly just because we've made a subagent to
+want to make the review process it doesn't mean you shouldn't review the
+work yourself both in the browser and in the code
+this is something I think is really important and something I always do to
+stay in the loop because even though everything looks okay in the browser it
+doesn't mean it's coded correctly and you might find something you don't like
+also if you're not looking over the code that clod produces
+you're going to find yourself out of the loop very quickly and find it harder to
+navigate the code base in the future when you do need to dig into the weeds
+
+========================================
+
+=== VIDEO 9/10: Claude Code Tutorial #9 - Claude Code with GitHub ===
+
+All right then, gang, so I want to move away from prompting context commands and sub-agents
+now and move on to another nice feature in Cloud Code, which is the Cloud Code GitHub
+app.
+And this is something we can set up easily from within the Cloud Code chat session, and
+I'm going to show you how to do that in a moment, but basically, when we install it,
+it creates two GitHub actions for us automatically, which are both really useful.
+The first one is that it can auto-review pull requests and provide feedback on those pull
+requests.
+The second one allows Cloud Code to automatically work on issues on a new feature branch when
+you mention at Cloud inside it.
+Now, before I show you how to set up this feature, I will say that you need to have
+the GitHub CLI already installed on your computer, which you can do by following these installation
+instructions.
+So I'm going to leave a link to this repo down below the video, but essentially, you
+can just install it via something like Homebrew on a Mac or Winger on Windows.
+It's all really simple to do, and it outlines the steps in this readme file.
+Once you've installed the GitHub CLI, you'll also need to log in by running this command
+in your terminal, ghOrthLogin.
+Once you've done that, you're ready to set up the Cloud Code GitHub app.
+All right, so inside Cloud Code, we can use a built-in slash command, which is forward
+slash install hyphen GitHub app, and I'm going to press enter here, and what that does is
+set up the GitHub actions for the repository that we want to give it access to.
+So I'm going to press enter, and then it's going to ask us which repository we want to
+use.
+We can enter a different one if we want, but I'm going to use the one linked up to this
+local repo right here that I'm in.
+So I'm going to press enter on this option.
+Then it's going to open a browser, and it's going to ask us to install Cloud Code on GitHub.
+So let's click the install button over here.
+We need to authorize it.
+Now you can choose to allow it access to all repositories or only select repositories.
+I'm just going to select this one to give it access to the Cloud Code tutorial one,
+which is this down here, and then I'm going to install and authorize this.
+And then once you've authenticated it and installed it on your GitHub account, you can
+just come back to the terminal and press enter to complete this, and it says, select GitHub
+workflows to install.
+We're going to install both of them.
+I'm just going to press enter, and then we're just going to choose the first option here,
+create a long live token with your Cloud subscription.
+It's going to ask you to authorize with your Cloud Code account, so I'm going to do that.
+Once you've authenticated with Anthropic, it's going to ask you to create this pull request,
+and this is basically two actions that it's created.
+It explains everything down here.
+We can just create this pull request.
+And then one of the actions is to automatically review pull requests.
+And down here, we're just waiting for some checks to be completed.
+Once they've completed, you can merge that request.
+And now up here, if we go to actions, we should be able to see we've got these two actions
+right here, Cloud Code and Cloud Code Review.
+OK, so now we're ready to put Cloud Code to use in the GitHub repository.
+And I'm going to create an issue in a second, and the issue is going to be that this title
+up here doesn't link to anywhere, and ideally, it should link to this page, the home page.
+So let's create an issue and tell Cloud Codes handle this.
+All right then, so let's head to issues, and we're going to create a new issue.
+We'll just say link from title missing, and then I'll say there is no link from the title
+in navbar to the home page.
+All right, so I'm going to create this issue.
+Now, nothing happens automatically, but if I come down here and mention Cloud, I can
+just say at Cloud, and I'll say, can you fix this, and I'm going to comment over here,
+and hopefully, just after a minute or so, Cloud is going to start work on this task.
+And you can see now Cloud has picked it up, and it's starting to work on this issue.
+All right, so it's created this little to-do list, much like it does in Cloud Code within
+the terminal, and it's looking at the different things it needs to do, examining the current
+navbar, adding the link for the title, it's going to test it, then it's going to commit
+and push the changes, then it's also going to provide a PR creation link, which we can
+go and take a look at.
+All right, so it's finished its little to-do list now, and there's a summary down here
+to say that it's fixed it and any changes that have been made.
+It's also created the PR, or rather, it gives us a link to create the PR based on this edit.
+So if we go there, it's pre-populated this description and also the title for the PR.
+I'm going to create this pull request, and when we create a pull request, Cloud Code
+automatically picks up on the pull request and provides us with a code review.
+And you can see now, down here, the Cloud Code review is going in the background.
+OK, so now it's finished each review, and we can see the feedback down here.
+We get a big green tick, which means it's pretty good overall.
+So we get a tick for code quality, a tick for bugs, a tick for performance and security.
+Overall, it says approve.
+Yep. All right, so let's go down here.
+We can merge the pull request now and confirm the merge.
+OK, so I just pulled down those changes so we could preview this in a browser.
+And now if we hover over this title, you can see it goes purple.
+We get the little pointer icon.
+And if we click on it, it goes to the homepage.
+Awesome. So that's now working.
+So then that's how Cloud Code can work directly in your central GitHub repository.
+And I think it's quite a nice addition to the product.
+You can also make additional actions, by the way, to include Cloud Code
+in different ways and different workflows.
+So it's definitely worth looking through the action files and playing around with them.
+
+========================================
+
+=== VIDEO 10/10: Claude Code Tutorial #10 - Final Thoughts & Tips ===
+
+Alright then gang, we have reached the end of the series and I really hope you've enjoyed
+it and maybe you're seeing the benefit of adding cloud code into your own development
+workflow now.
+I do want to end the course on a few final thoughts, words of caution and just a little
+bit of advice for using cloud code and also some shortcuts and tips near the end of the
+video as well.
+So first of all, and I think I've stressed this throughout the videos quite a lot already,
+always check the code yourself.
+AI can make mistakes sometimes, so be sure it's correct, don't automatically assume
+everything it does is right.
+Checking the code yourself also helps to keep you in the loop, understand your code base
+and know how everything is fitting together.
+And that's going to really help in the future if you do ever need to do some manual debugging
+or code edits.
+Secondly, context is key when you're using any kind of AI tool like cloud code.
+And I don't just mean bombard the model with context about everything, I mean be smart about
+your context.
+Keep it focused, concise where you can, and keep the context history lean where possible
+to keep the model on track.
+Don't be afraid to clear the context or start a new session if it ever gets bloated and
+as a rule of thumb, I tend to clear the context and start over whenever I work on a new feature
+or task.
+And finally, I would say don't rely on AI to do everything for you.
+Yes, it can be good as a coding assistant and loads more things, I'd probably compare
+it to maybe having a junior or even a mid-level developer working alongside you.
+But if you use it too often and rely on it for every single problem, it's going to turn
+you into a lazy programmer who might not learn new skills and even forget current ones because
+you're not using them.
+And on that same note, I would also say this, a lot of coders right now think AI is going
+to replace them and I think that's not true for several reasons right now.
+I do think the way we code will be different and AI will certainly play a big role in whatever
+the landscape looks like in the future, but I don't think at least not yet.
+It's in any position to completely replace web developers and in fact, I think AI just
+brings more opportunities to developers.
+Think of all the new types of applications and programs that are being developed that
+incorporate AI, MCP servers, agents, custom AI integrations, even developing sites and
+APIs with AI usage and security in mind.
+All those things are now being developed and I think that brings a whole new level of opportunity
+for web developers to specialize in.
+I also think because we will be getting a whole swathe of applications built almost
+entirely using AI, unfortunately, there's still going to be a big call for coders who
+can go into the weeds, understand the code and manually work on it.
+And for all these reasons, I think learning to code is arguably more important now than
+it was before.
+Anyway, now my pattern wisdom is out of the way.
+Let's end on a few shortcuts that we can use within cloud code to make life working with
+it a little bit easier.
+All right, so first of all, you can use the up and down arrow keys to cycle through previous
+prompts to see them if you want to send a previous prompt again.
+There's another one.
+If you press escape, then you can clear out the chat.
+Also, if you go into something and say we use a tool like a command like MCP, you can
+always press escape to exit out of these windows and it goes back to the chat.
+You can also use the question mark to go into bash mode.
+So now you can run bash commands.
+So for example, I could say get status and it's going to run that command for us exactly.
+So it's on branch main and you can double escape.
+I think I might have shown this in a previous lesson, but you can double escape to go to
+previous sections of the chats.
+So I could go back to this one if I wanted to or this one and it's going to take me back
+to that point in the chat and it's going to clear out any history beyond that.
+So if I press double escape now, then you can see there's no chats after this current
+one.
+And down here at the bottom, there is this little hint here that says question mark for
+shortcuts.
+So if I press question mark, you're going to see some of those shortcuts that we've seen
+as well.
+So this was the bash mode I just showed you, this for tools, this for file path for adding
+context and this to memorize something inside the clod.md file.
+OK, then my friends, so that just about wraps it up.
+If you enjoyed this series, please don't forget to give the videos a thumbs up and subscribe
+to the channel.
+Maybe share the videos if you're feeling kind as well.
+And please let me know in the comments if you would like more clod code courses in the
+future.
+I have debated making a whole big masterclass about clod code where we use it to help build
+an entire application from scratch.
+So let me know if that's something you would like to see in the future.
+Anyway, thanks for watching and I'm going to see you all in the next series.
+So then my friends, I really, really hope you enjoyed this series and you learned something
+along the way.
+If you did, please, please, please don't forget to share, subscribe and like that really
+means a lot.
+And if you want to access all of my YouTube courses without adverts, also get access to
+premium courses and early access courses as well.
+You can do at netninger.dev.
+You can sign up for Net Ninja Pro, which is just $9 a month and also half price for the
+first month with this promo code right here.
+And for that, like I said, you get access to every course without adverts, without YouTube
+adverts.
+You also get access to exclusive courses not found anywhere else.
+You get access to my premium courses on Udemy and also early access to all of my YouTube
+courses as well.
+So the link to this page to sign up is going to be down below.
+Again, I really hope you enjoyed this series and I'm going to see you in the very next
+one.
+
+========================================
+

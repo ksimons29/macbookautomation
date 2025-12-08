@@ -1,0 +1,319 @@
+A year ago, I barely used Claude.
+Now it handles over 50% of my AI workload
+because when compared to other general-purpose chatbots
+like chat.jbt and Google Gemini,
+Claude excels at three specific types of tasks.
+So in this video, I'll show you exactly how to set up Claude
+for maximum performance, cover its most impactful features,
+and of course, dive into real-world use cases.
+Let's get started.
+First up, we're going right into Settings
+and under the Profile tab,
+you can see that I've intentionally left
+the Personal Preferences section here blank.
+This is Claude's equivalent
+of chat.jbt's custom instructions.
+Why?
+Because unlike chat.jbt,
+I find that Claude's default output
+is already well-structured and concise.
+For example, I have custom instructions for chat.jbt
+to structure outputs like a consultant,
+but Claude doesn't need this kind of hand-holding.
+And this is also one of the reasons I prefer Claude
+over chat.jbt and Gemini for writing tasks.
+Next, go ahead and enable Artifacts
+and CSV chat suggestions, but disable prompt examples.
+These are just too basic and clutter up your workspace.
+And if you're on the paid plan,
+I highly recommend connecting with Google Drive
+and you'll see all of this in action in a little bit.
+And under Feature Preview,
+toggling on the Analysis tool allows Claude to analyze
+and visualize data.
+Again, you'll see examples of this later on.
+And I keep latex rendering off
+because I don't use Claude for math.
+And some in the comments, please confirm
+this is indeed pronounced latex.
+Now the foundation is set up,
+let's move on to feature number one, Artifacts.
+Diving right into an example,
+here I'm asking Claude to draft an external blog post
+based on a product design document.
+And notice how Claude opens up a separate window
+to present the final blog post
+while explaining its thought process
+in the original chat thread.
+Put simply, the Artifacts feature,
+this standalone window on the right,
+makes it easy for us to work with complex output.
+Instead of having to copy text from the chat box
+and paste it somewhere
+and having to remove this extra information, right?
+I could just copy the entire blog post here
+or download a plain text file.
+And that's not all.
+After adding a follow-up prompt,
+asking for a tweak to the first paragraph,
+we can see Claude making real-time edits
+directly in the Artifacts window,
+giving us the peace of mind
+that nothing else has been changed.
+In addition to text, Claude can also output code
+and charts in the Artifacts window.
+Check this out.
+Here, I'm asking Claude to write a Google app script
+that formats all speaker notes
+from a Google Slides presentation.
+And although I have no coding background,
+I just follow the steps,
+copy and paste the code,
+let it run,
+and wow, it works perfectly.
+For the charts example,
+I'm gonna kill two birds with one stone
+and first show you how we can click
+the screenshot button here
+to grab a screen capture from another tab or window.
+In this case, I'm sharing an event registration funnel,
+register to approved, to attended,
+and I ask Claude to create a funnel
+that visualizes the attendees for this event.
+Share key findings below the graph.
+And after letting that run,
+oops, we ran into an error.
+Thank God, this is my design and I totally planned for this.
+No, but seriously, I did.
+What's amazing is that we can ask Claude
+to fix its own error.
+And after a few seconds,
+Claude successfully troubleshoots
+and outputs a chart and even adds
+a few calculations below.
+Don't worry, we'll go through much more advanced
+data visualization examples later,
+but for now, just remember Claude gets to determine
+when to use the Artifacts window.
+Meaning sometimes, if your task is too simple,
+the text or code output might just appear
+within the chat box.
+Next up, we have writing styles.
+When we start a new chat,
+we can choose from a few preset writing styles.
+And after trying these out,
+I can tell you for 99% of the time,
+normal works just fine.
+There's no need to waste time
+and add unnecessary friction, switching back and forth.
+I've also found the create my own style function
+to be slightly disappointing.
+The idea is to share a few paragraphs of example writing
+and Claude will remember and mimic that style.
+For example, I love watching fire ships videos.
+His name is also Jeff, by the way.
+My name is Jeff.
+He has this very sharp, sarcastic
+and self-deprecating sense of humor.
+But even after sharing transcripts from multiple videos,
+Claude's attempt at emulating his tone of voice
+is not just underwhelming, but arguably inaccurate.
+By the way, if keeping up with AI
+is one of your goals for this year,
+you can grab my free AI toolkit
+designed to cut through the noise
+and help you master essential AI tools and workflows.
+I'll leave a link down below.
+Although this next feature isn't exclusive to Claude,
+it's my favorite one by far projects.
+Starting with a simple visualization of how it works,
+let's say I find a workout program I like online.
+I can share that as context with Claude,
+along with my fitness goals,
+and ask Claude to generate a tailored plan for me.
+Simple.
+But what if my girlfriend also wants
+a workout plan tailored for her,
+instead of adding her goals into the same chat thread
+and risk confusing the AI as the conversation progresses,
+it's much better to add the workout routine I found
+as project-level context, and within that project,
+create two separate chats with chat-level context.
+One with my fitness goals,
+and one with that of my girlfriends.
+Putting aside the most hypothetical part of this example
+is me finding a girlfriend.
+Just think about how much time
+this feature can save you at work.
+For example, as a product marketing manager,
+one of my responsibilities is communicating
+product announcements.
+So at the project level within Claude,
+I attach a comms doc, a product overview document,
+written by the product team.
+And at the chat level,
+I share newsletters from previous product announcements.
+Now that we have project-level context, the comms doc,
+and chat-level context, examples of previous newsletters,
+I can ask Claude to write a newsletter
+for this latest launch, using the same format,
+structure, and tone found in the previous newsletters.
+Taking this a step further,
+by sharing previous blog posts, internal announcements,
+and PR briefings at the chat level,
+while keeping the comms doc as project-level context,
+we can quickly generate tailored outputs
+that maintain perfect consistency
+with our new product messaging.
+The results are amazing, try it yourself.
+Yes, I still need to go in
+and make some minor adjustments to the outputs,
+but with the right prompts,
+this gets me 80% of the weight there.
+A few things to keep in mind
+when using the projects feature.
+First, although we can add text content
+at the project level,
+we cannot at the chat level.
+Second, I like to add project-level custom instructions.
+Since we're announcing a new product launcher,
+I'm telling Claude to highlight the products
+that you need benefits
+and how they solve potential consumer pain points.
+And for, let's say, my own YouTube projects,
+I instruct Claude to act like a senior YouTube strategist
+who's experienced at storytelling.
+Finally, projects is a paid feature,
+so if you can only pay for one AI tool,
+I would say stick with ChachiBT or Google Gemini
+since they are more well-rounded
+and ChachiBT has the projects feature anyways,
+and only pay for Claude if your job involves
+a lot of writing and or coding.
+Moving on to interactive dashboards.
+Here, I have the latest AI agents white paper
+published by Google, but it's too long.
+I don't have a technical background
+and I just wanna know the key concepts.
+So I attach it to a chat and ask Claude
+to create an interactive dashboard
+to visualize this dense PDF
+so I can digest the information more easily.
+Claude opens up the artifacts window
+and starts generating the code to produce the dashboard
+and oops, it ran into another bug.
+No problem though, we tell Claude to take care of it
+and after a few moments,
+it outputs a fully functional dashboard.
+But as you can see, the user interface is a bit awkward,
+so I tell Claude, hey, the layout is a bit weird.
+Let's have the tabs go across horizontally
+and the corresponding content only appear
+when I click on a tab.
+And after a few more moments, Claude makes the changes
+so that only the active tabs contents are shown.
+Let's first take a moment
+to acknowledge how mind-blowing that was.
+Not only did Claude generate a fully functional dashboard
+without us writing any code,
+it also fixed its own errors
+and made edits to the initial dashboard.
+Pro tip, make sure to include the keyword interactive
+in your prompt when creating interactive elements
+like interactive funnel or interactive charts.
+Taking this example a step further,
+I asked Claude to create a simple infographic
+that summarizes the white paper
+so that I can share bite-sized visuals on social media
+and get that sweet engagement.
+After Claude does its thing,
+I guess this is technically an infographic,
+but still very hard to understand the relationship
+between these key concepts, right?
+So I can add a followup prompt.
+Let's show the relationship and connections
+between the key concepts in a more user-friendly way
+and use a black and orange color scheme.
+And after Claude read runs the code,
+this is much, much better.
+It's a lot cleaner.
+Yes, there are still issues like spacing issues
+and the arrows are on top of the text here,
+but that's okay because I just wanted a visual mockup
+of how an infographic would look
+and now I can download this as an SVG file
+and start making edits myself.
+Now let's talk about data visualization.
+Earlier on, we created a simple funnel chart
+based on information from a spreadsheet,
+but you might be like, Jeff, this data is so clean.
+It's organized.
+It's in a table.
+I'm usually working with unstructured, messy data.
+No problem.
+I have a set of messy transaction data right here.
+And instead of me telling you what we're looking at,
+let's ask Claude.
+We'll first download this as a CSV file
+and we're gonna upload that onto Claude with this prompt.
+Act as a senior business analyst, blah, blah, blah.
+Your task is to analyze the provided data
+and outline three effective methods or frameworks
+for deriving meaningful insights.
+And here, when Claude is quote unquote thinking,
+we can see the analysis feature we enabled earlier.
+Claude first analyzes the data,
+which is great because we didn't share any context.
+Then Claude tells us what insights we can extract
+based on its analysis of the raw data.
+I'm not gonna read through all of this,
+but one thing that caught my eye
+was customer segmentation.
+And since I know that all these transactions
+come from two sources, Gumroad and Subscription,
+I can follow up with this prompt.
+I like to segment the customers based on purchase patterns.
+Specifically, I want you to bucket the purchases
+under Gumroad or Subscriptions.
+Create a visualization and add key findings under the charts.
+And after around 20 seconds of thinking and coding,
+Claude outputs a bar chart
+comparing the two types of transactions.
+And below the chart, we're told subscriptions
+made up 56% of transactions compared to Gumroad's 44%,
+yet despite fewer transactions,
+Gumroad generated higher revenue.
+I'm a cynical person, so just to be safe,
+I go back to the raw data,
+filter for all the subscription transactions,
+and I'm just gonna sum all this up.
+And we see that it's $2,862
+and going back to our Claude output here,
+subscriptions $2,862.
+So yeah, it's accurate.
+If I wanted to use this in a presentation at work,
+I'd make some changes to the color scheme
+and font styles, right?
+Take a screenshot of this chart here,
+copy and insert it within a slide like so.
+And I would copy the key findings
+and paste those as speaker notes.
+Pro tip, include the word visualize or visualization
+if you want Claude to output some sort of visual element.
+We went through a lot today, so to quickly recap.
+First, the projects feature lets us manage context
+at both the project and chat level,
+enabling us to generate highly tailored content
+while maintaining perfect consistency.
+Second, Claude excels at turning complex information
+into interactive dashboards via its artifacts feature.
+And the best part is we're able to easily make adjustments
+even if we don't know how to code.
+And finally, thanks to the analysis feature,
+Claude is able to visualize insights derived
+from unstructured data in ways that anyone can understand
+from simple funnels to customer segmentation analysis.
+If you enjoyed this, you might wanna check out my perplexity
+and notebook LM tutorials next.
+See you on the next video in the meantime.
+Have a great one.
