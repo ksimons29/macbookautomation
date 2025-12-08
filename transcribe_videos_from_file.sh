@@ -2,7 +2,8 @@
 set -euo pipefail
 
 # Config defaults (override with env vars if needed)
-WORKDIR="${WORKDIR:-$HOME/yt-transcript-env}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKDIR="${WORKDIR:-$SCRIPT_DIR}"
 URL_FILE="${URL_FILE:-$WORKDIR/video_urls.txt}"
 OUTDIR="${OUTDIR:-$WORKDIR/transcriptions}"
 MODEL="${MODEL:-small}"
