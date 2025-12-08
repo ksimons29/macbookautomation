@@ -43,11 +43,12 @@ while IFS= read -r url; do
   fi
 
   # Transcribe with Whisper to txt
+  WHISPER_CMD="${WHISPER_CMD:-$HOME/.local/bin/whisper}"
   whisper_args=( "$audio_file" --model "$MODEL" --output_dir "$OUTDIR" --output_format txt )
   if [ -n "$WHISPER_LANG" ]; then
     whisper_args+=( --language "$WHISPER_LANG" )
   fi
-  whisper "${whisper_args[@]}"
+  "$WHISPER_CMD" "${whisper_args[@]}"
 
   # Normalize transcript filename to Title.txt
   base="$(basename "$audio_file")"

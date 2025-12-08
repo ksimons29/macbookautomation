@@ -1,0 +1,458 @@
+Cloud skills or agent skills.
+This is something I have been waiting for a long time.
+And honestly, I'm so excited
+because this has a huge potential and such a game changer
+just like MCP in changing
+how we design airball flows or AR agents.
+And not just within cloud,
+other air models might likely adopt similar concepts.
+So in this video, I explain what skills actually is,
+why this is another game changer.
+And most importantly,
+how you can start using them today to get immediate results.
+Let's go.
+So what is cloud skills really?
+The official definitions is very confusing.
+The easiest way to think of it is
+we usable instructions menu that teach cloud
+how you want tasks to be done,
+what tools to use, what standard to follow.
+So it execute automatically anytime, anywhere when you need it.
+Before cloud skills,
+when you execute repetitive tasks like writing, marketing,
+emails that follow your brain voice or process,
+you will have to repeat the same instructions
+in every single job.
+This is inconsistent and time consuming.
+Now you might be thinking,
+just use a cloud project with custom instructions, right?
+Yes, 100%.
+And this is what most people are already doing.
+But there are still two fundamental limitations.
+First, these instructions are not portable.
+Imagine next time when you're doing another campaign,
+you either have to execute inside this project
+or you repeat all the instructions again.
+And second, it's not stackable.
+Imagine you have a specialized project for copywriting
+and other project for campaign analysis.
+You can't just combine them together for a new task.
+They operate in complete isolation.
+And so you have to build so many different projects
+which might actually end up with overlapping workflows.
+And that's why the solution, cloud skills.
+So instead of embedding all these workflow instructions
+and resources inside a project,
+you extract them out and package them
+into what they call the fancy term skills
+and make them available at account level,
+including the web app, cloud code or cloud API.
+So once you understand this,
+you can have so many kinds of user manual,
+perhaps an email writing menu, market research menu,
+design template menu,
+and they can be used all together as well.
+And that is why this is a game changer.
+As now you have way more flexibility
+and possibility of these skills
+for your workflow or agent design.
+Now another big confusion is between skills, MCP and projects.
+And someone might tell you skills
+is just Anthropics way to fix the MCP problems.
+And this is a big misconception.
+If you view it under the lens of cloud ecosystem,
+cloud itself is the brain.
+The core intelligence that make decisions.
+Skills are the instruction menu.
+The reusable instructions
+for how specific tasks should be done.
+MCP provides the tools,
+the actual capabilities to do things
+outside of class knowledge,
+like creating a file, calling a database.
+Projects are the dedicated workspace
+where you can combine skills,
+MCP tools and background knowledge
+for specific ongoing work.
+And this is exactly what makes this cloud ecosystem
+so powerful.
+You can mix and match
+based on what your specific workflow needs.
+Not every workflow needs all these components.
+They are not competing.
+They are building blocks
+and are designed to be coexist
+to build powerful workflows or agents.
+Basically there are three types of skills
+you can use with cloud.
+For this video demo,
+I'll be using the cloud web application.
+First, the official skills by Anthropics.
+These are ready to use skills built right inside cloud.
+Just go to settings under capabilities.
+Here you will control what capabilities
+cloud will use in the chat.
+But first you have to make sure code execution
+and file creation has been turned on
+in order to use skills.
+Then you will see a list of predefined skills.
+I do not recommend you turn them on all at once.
+Just pick the one that you're really gonna use
+because more skills might confuse cloud
+when executing the workflow.
+Besides the official skills created by Anthropics,
+there are also skills created by Anthropics partner
+like Notion.
+So you can check out the official GitHub repository
+and scroll down to partner skills
+where you can download the skills and use them on cloud.
+So I will put the link in the description.
+And second, custom skills.
+So these are your own creation.
+It can be your own workflow instructions,
+resource template or even coding script.
+You prepare your own skill file
+according to the official format
+and you activate them by uploading the skill file.
+You can also turn on and use the official skill
+called skill creator to create your custom skills
+if you're nonsentical.
+This is how you personalize cloud to your way of working.
+And I will show you how in just a minute.
+Third is community creator skills.
+So there is also a growing ecosystem of skills
+created by other cloud user.
+But you want to be cautious about security
+when using these community skills.
+And according to Anthropics,
+once you turn on the skills,
+it will be automatically triggered
+when it's contextually relevant.
+But from my experience,
+cloud might not trigger all the time as you expect.
+So my tip is to also add this
+to the account level custom instructions
+to make sure cloud will always consider
+relevant skills when responding.
+And if you're a marketer wanting to build
+your own cloud skills,
+there is a resource that pairs perfectly
+with what will be covered in this video.
+Cloud has four marketers from the hustle.
+You can find the download link below.
+It is a comprehensive prompt library
+decided specifically for marketing power users like us.
+It has 10 course sections
+covering every common marketing task
+we're all familiar with.
+Content creation, business research,
+dashboard creation.
+Particularly, I like the strategic analysis
+and thinking section.
+I believe that AI shouldn't just give you direct answers.
+It can be your great thinking partner
+that can challenge your own assumptions
+on covering your blind spots.
+And here is the best part.
+You can integrate these prompts directly
+into your custom clock skills
+as you build all your marketing workflows.
+So you are not building everything from scratch.
+Download for free in the description.
+It's made by the hustle who is sponsoring this video.
+Thank you so much.
+All right, now let's try a simple example
+using the official theme factory skills we just turned on.
+So let's say I'm building a landing page
+for a new SaaS product called Powstrack.
+And I already got the copy.
+Now just attach the copy to cloud
+and then I'll set to build the landing page mockup
+using a beautiful theme.
+Note, I haven't mentioned using any specific skills,
+but you can see cloud is now checking
+the theme factory skills automatically
+to pick a beautiful theme.
+And that is because the account level
+custom instructions I have already set.
+So within just a minute, the landing page is ready.
+The official theme factories has 10 theme
+and cloud picked the tech innovation theme from the library.
+It looks pretty cool and tech savvy.
+So with this simple skills,
+you can quickly apply ready to use styling
+to any documents that you create
+like a landing page or a presentation.
+Let's try another example.
+So this time I'll set to drop an FAQ work document
+about these product launch,
+which will be shared with the internal team.
+So this time cloud is reading
+the building document creation skills
+and generating these well-formatted documents.
+So these looks pretty decent and comprehensive
+with seven pages.
+And you can see cloud applied the same theme
+to this document as well.
+The only complaint I have is it didn't use
+the internal communication skills
+that I expect for driving these FAQ response.
+So this is the limitation of cloud skills
+that it highly relies on a context
+to trigger the relevant skills
+or you need to specify the skills explicitly in a chat.
+And what I like is now I can just either download the document
+or I can upload to my Google Drive,
+making it more easy to share with the team.
+So using the official theme factories
+or any other building skills that you turn on,
+you can already quickly apply that into your workflow
+by giving relevant context.
+Now you know how to use an existing building skills,
+but you can also create a new custom skills
+in case there's no one that match your needs
+and there are three main ways to create a new custom skills.
+The first way is to extend an existing official skills
+and we package it into a new skill.
+For example, I run a flower business
+and my company has this branded presentation template
+and I want cloud to use it
+whenever building a presentation deck.
+Now just attach this presentation template
+and I'll say to first read the official PowerPoint
+building skills and then create a new skills
+called branded deck that extends it.
+Now I highly suggest you give more context to cloud
+whenever creating a new skills.
+So when the skills should be triggered,
+any usage example, any specific guidelines
+and most importantly, I'll say to reference
+to parent skills to avoid duplication
+and also use the official skills creator
+to ensure the proper formatting.
+Then I'll put it as a ready to use SIP file.
+So now cloud is reading the parent skills
+and the skill creator to understand the structure
+and also my uploaded template
+to extract the relevant colors and fonts.
+And then the new skills is ready,
+is in a SIP file format and then we can just download it.
+So to activate these new custom skills,
+just go back to settings under capabilities
+and here you can upload the new skills we just created.
+And now this new skills is ready to use everywhere in the chat.
+So for example, I'm building the Q3
+business performance review presentation.
+So first, upload the sales data
+and the marketing research report
+and ask cloud to extract key insights from these resources.
+And just within a few minutes,
+we have this comprehensive executive brief
+about the performance analysis.
+This is really called strength
+to provide this kind of strategic insight
+with summary tables.
+And now we are ready to build a deck.
+So ask cloud to base on these executive brief insights,
+create a company branded presentation deck.
+Note, I have emphasized the keyword company brand
+to make sure cloud will use the branded deck skills
+we just create.
+So it is now triggering the brand deck skills
+and understand the brand guidelines
+and presentation requirements.
+And then also reading
+the official PowerPoint presentation skills.
+And so it is now creating the presentation
+and within just a few minutes,
+the brand presentations is ready.
+It looks pretty good with all the theme of slides
+and we can just download it for double checking.
+So cloud does most of them right.
+The theme and style look exactly the same
+as the company presentation template.
+Although there's still some minor margin or layer issues
+that I have to adjust myself,
+for most of the content is correct
+and fits them well within the layout.
+A complaint is that it was not using any charts in the deck
+as I instructed, but just the table only.
+And whenever you find any issues
+when executing the theme or you want to enhance it,
+you can always give it back to cloud
+and adjust the skills and update for you.
+Although it's not like 100% finalized,
+to be honest, I'm still impressed
+because this is a complicated theme with images
+and heavy styling.
+And compared with other air models,
+cloud is by far the only AI really able
+to build beautiful presentation like this
+within one single workflow.
+And I would say this is the most immediate,
+easiest quick win for every marketers
+or working professionals.
+And this method doesn't just work for presentations.
+It works for documents, access brushes,
+landing pages, it's completely scalable.
+And so you get the idea.
+You don't need to start from scratch in creating new skills.
+Try to leverage any existing official skills first
+and build upon it.
+Now the second way is to turn any existing workflow
+that you are already using and package it into new skills.
+And this is another immediate quick win.
+For example, I have this custom cloud project
+about team reporting.
+So these projects specialize in pulling the project
+checker status from the Notion database
+and building a custom dashboard.
+So it already has a very detailed project
+custom instructions, like the role,
+the tool that it should be using,
+workflow details, output format,
+and also the output template and the resource.
+So this is a really good scenarios
+in packaging it as a new skill.
+So first, make sure you already turn on Notion MCP,
+then use this prompt to ask it
+to create a new skills called Notion Project dashboard.
+Very important is to ask it first study
+the available Notion MCP tools
+and determine which tools are really needed
+for this specific workflow.
+So the reason is because usually for an MCP server,
+it might contain so many different tools
+and you don't want the skills
+to load every possible tools which might not be needed.
+Then again, include all those important contacts
+about these new skills
+and then paste back the full set of custom instructions
+with workflow details
+and then upload the output template file as well.
+So immediately the new skills is created
+and ready to be uploaded and activate.
+So the magic here is then I can now just ask cloud
+to generate the project standard dashboard
+from Notion in any new chat.
+And I don't need to stick with any project.
+Cloud will now call the Notion MCP server
+and triggered Notion Project dashboard skills
+for this task.
+And the dashboard format styling look exactly the same
+as I generated within this project.
+And that means now using cloud skills,
+you can make any of your established workflow possible
+and combining with MCP,
+you can bring them anywhere as you chat with cloud.
+Now let's go more advanced
+and take a step even further.
+So that is the third way,
+create multiple new skills from scratch
+and use them and MCP all together within a cloud project.
+So for example, I want to streamline my workflow
+of blog content creation
+from keyword research
+to the actual blog content creation.
+So first let's build a new skills called keyword research
+that will be using the ASTRAF's MCP
+and ask it to study the available ASTRAF MCP tools
+as there's so many.
+So give it all the context
+and this time also include the workflow details.
+And this is important
+because we need to teach cloud
+to understand the process and to follow through.
+Of course, this has been simplified for the demo purpose.
+I highly suggest you attach a more comprehensive versions
+to ensure the skills quality.
+And within a minute,
+we got this new keyword research skill.
+Then the second skills is the blog writer skill.
+So this time,
+besides including the workflow details in the prime
+also include the output guideline
+as I want to make sure every generated blog articles
+is optimized for AR search engines.
+Now let's say we have this brand project
+for the like has carry coaching platform product.
+It already has the product overview file,
+product materials,
+also with the custom instructions
+that briefly covered the brand voice,
+target audience,
+not here I have include skills workflow.
+And saying for SEO content and blog writing content,
+it will use the skills keyword research and blog writer.
+The tip is you don't need to include the workflow details.
+Just instruct the skills it should be using for what task.
+Another tip is you can also add the tools
+in the custom instructions to make sure cloud knows
+which tools it can use for this project.
+So let's say we want to create a new blog post
+about how to build a personal brand on LinkedIn
+as part of the campaign launch.
+So the prom is very brief
+and you can see cloud is now calling the blog writing skills
+and keyword research skills
+that triggered the Ahrefs MCP tool
+to get the relevant keyword and question data.
+And even doing the web searching
+as this is what I have instructed
+in the blog writing workflow.
+And cloud is following all the workflow details
+and finally generate this formatted work document.
+I am quite impressed.
+It's very comprehensive with six pages
+and it's exactly the format that I want.
+With the too long don't reach sections for AI,
+use of the question as the heading
+and then use of bullet points.
+And I can even upload to Google Drive
+for further adjustment.
+And this is just a simplified version.
+Cloud can also add internal links, external links
+and even images to these blog content.
+And you can always just ask cloud to make changes for you.
+So when do you really need the skills
+or need to create a new custom skills?
+Answer yourself these three core questions.
+First, do you need to repeat the same instructions
+across different tasks like three times or more?
+Second, if putting it in a real world situation,
+would you need to train a real human
+about this process or standard?
+Third, if quality or format consistency
+is needed every time.
+If you have more than two boxes checked,
+the better you should create a skills.
+Also, if you're on the Pope line,
+the weekly usage limit can be quite a pain.
+Only create custom skills for your most repeated workflows
+to avoid burning tokens
+or use other AI models to create a skills for you.
+You can simply upload the official skill
+creator CIFIAL to check GBT.
+Ask it to study it and generate a new skill
+by including your requirements.
+This works 100%.
+And skills are static and might need maintenance,
+especially when it needs to call an MCP tool function,
+which might change over time.
+So you can ask cloud to include what I call a backup plan
+whenever tool call fails
+and try not to use too many MCP tools in one skill.
+Keep it simple.
+So make sure you try all this method I mentioned
+and let me know how it goes in the comment.
+And give me a thumbs up if you enjoyed this video so far.
+Also, I encourage you to join my committee.
+Every month we have specialized deep dive workshop
+and you will also unlock all the prime resources
+I share on this channel.
+I hope to see you there.
+And before you go,
+also watch this video about MCPs.
+So you have better understanding
+of how these two will work together.
+I'll see you next time.

@@ -1,0 +1,357 @@
+If you're a fan of Claude, you're likely only using a fraction of its power.
+In fact, based on people I talk to, like 99% of people don't know how powerful it actually is.
+If you're only using it as a simple chatbot, for example, you're really missing a huge opportunity with Claude's capabilities.
+So in this video, I'm going to show you some powerful features of Claude that 99% of people don't even know about,
+and some mind-blowing use cases so you can get the most out of Claude for your business.
+By the way, if you're new here, my name is Rick Mulrady, and for the past 11 and a half years,
+I've run a multi-seven-figure online business helping other online business owners grow and scale their online business more efficiently.
+And for the past year and a half, I've run a community called the AI Playbook where I help other online business owners leverage AI
+so that you can streamline your business and become more efficient and profitable in the process.
+I'll link to the community in the description below.
+Now, firstly, with Claude, you've got three options for using it.
+You've got the online version, which you can see right here, just Claude.ai.
+Then you've got the desktop version.
+And then you've got Anthropic Console, which is where you access the Anthropic API.
+So console.anthropic.com, I'll link to it in the description below.
+But this is sort of equivalent to the OpenAI Playground.
+But again, you get to access the API.
+Now, one thing I'm always using the console for is this Generator Prompt.
+So what you can do is you could put a prompt in here and then it will improve it based on the best practices of prompting Claude.
+And so you can say this prompt will be used with models that have thinking enabled, so I can choose that.
+I can click on Generate and it will think for a second and then it will spit out this Claude Optimized Prompt.
+Again, using XML tags and so forth.
+You can either continue using this prompt and executing this prompt right here from within the console
+or what I often do is I'll just copy this and I'll paste it into Claude and I'll execute the prompt from there.
+And within Claude, you've got essentially four core features.
+You've got Chat, you've got Projects, you've got Artifacts and you have Claude Code.
+I had Claude Code right here like last week for some reason it disappeared.
+But you can go down to Settings, go down to Claude Code and you'll see it right here.
+Then you can click on the Install Instructions link right here.
+And then also hitting Under Settings, you can turn on some additional features like this is where you turn on Artifacts.
+So you click on Features here, you turn on Artifacts here.
+You can create AI-powered Artifacts, just turn that on.
+That's where you can create apps and prototypes and interactive documents that use Claude inside the Artifacts.
+I'm going to show you an example of that here today in this video.
+You can also turn on the Analysis Tools.
+So basically Claude can write and run code to process data, run analysis.
+So this is your analytical piece of Claude for spreadsheets and so forth.
+Then you've got Connectors, which I think is the most powerful along with Claude Code, the most powerful feature of Claude.
+This is where you're able to connect Claude to other third-party tools like Google Drive, Gmail, Zapier, Notion, etc.
+So essentially you can come down here to click on Browse Connectors and these are the pre-made connections or MCP connections.
+And in the web version, they have two different options you can choose from.
+The web version, these are all the tools that you can connect to in the web version.
+Then you've got the desktop extensions, which I'll show you in the use cases that I've got coming up for you.
+But you can see Asana, Canva, Box, Gmail, Google Drive, Google Calendar, HubSpot, etc.
+And I've done a whole video, by the way, all about Claude MCP connections, which I'll link to right up here.
+And the other option with Connector is if you don't see a tool here that's already pre-done or in the desktop extensions,
+you can go down here to Add Custom Connector and you can find the MCP server URL wherever you're looking for MCPs.
+And you can name it and then put it right in here.
+You've got a couple of authorization advanced settings here that you can click Add and then you're connected to that tool.
+So it's starting officially on September 28, 2025.
+Anthropic will be using our data and conversations and chats just like OpenAI does with ChatGBT and Gemini and Grock and all that stuff.
+Anthropic, which is sort of like the last of the holdouts, if you will, they are now going to be using our data,
+our chats, to train the Anthropic Claude model.
+So if you want to turn that off, you've got to go to Privacy because it is defaulted to On.
+You'll see where it says Help Improve Claude and you want to make sure that it is turned off.
+This is something that they've just kind of put out there semi-quietly.
+And again, it's defaulted to On.
+So if you want to turn that off, go into Settings, Privacy, Toggle Off, Help Improve Claude.
+Okay, now I want to show you some use cases that are really using a lot of the powerful things that Claude has.
+Like I've been talking about here.
+Number one is we're going to use the Claude desktop app.
+I like it the best.
+I think it's the most powerful personally simply because I can connect to tools and files on my computer,
+which I'm going to show you here in this first use case.
+So I'm in projects and I've created a project called the, basically, the Business Brain Content Advisor.
+I've trained it on all the knowledge about my business, my brand, my writing style, my tone, my brand strategy, etc., etc., etc.
+So the first thing you're going to want to do is you're going to want to create a folder of some sort on your computer.
+I put it in my documents and I call it the A by Playbook content.
+So I click on that.
+You're going to see a whole bunch of different files in here and I have system prompts.
+I have memory.
+I have a whole bunch of just contextual files in markdown format about my business,
+about my membership, about the YouTube channel here, etc.
+And then once you've set those files up on your computer and you know exactly where they are,
+the instructions are now really, really important.
+Okay.
+So this is the essentially the prompt.
+So you're my trusted advisor and expert online B2B marketer.
+Tell a little bit about my business.
+And so this is where I'm telling it how I want it to use the files.
+Now, in addition to the files, the other thing that makes this project so powerful,
+again, using Claude's connectors is I want in my project, persistent memory.
+So right now Claude doesn't have memory built into it unless you're on the enterprise or teams level.
+The knowledge graph memory server is an MCP.
+I'll link to it in the description below.
+It's not my MCP, but it's over on GitHub.
+So you just scroll down here and you can see usage with Claude desktop and it gives you some different options to add this to your Claude desktop.
+So how I've done it is if you go over to Claude and click on settings again, go down to developer and you click on edit config.
+Is you're going to have a JSON file right here.
+So you would just double click this open up as a simple text file and then you would add the word or code go.
+So I'm using the NPX.
+So you just simply copy this, this code right here.
+And by the way, I am not a technical person.
+I don't know how to code.
+I'm just following instructions here.
+It's actually really, really easy.
+So you go to here, double click, add that code to the text file, save it and you're good to go.
+Now you're connected.
+Now I have the persistent memory connected to my Claude project.
+Now let's go back to the Claude project and the goal behind the business brain content advisor.
+Now that I have those files, we need to make sure that we can connect to those files and to the memory.
+And we're going to do that within our instructions here.
+So you can see here, I have you're my trusted advisor and online, an expert online B2B marketer.
+My business is online only blah, blah, blah.
+So now I'm saying use the file system MCP to access directories and files again.
+So that was just to show you again, if I go back over to settings real quick, go down to connectors.
+If I go to browse connectors desktop extensions, so it is the file system right here.
+This gives Claude access to the files that are on your computer.
+And the next part here, I have access and update memory files and then I have the path of where my memory is to maintain conversation continuity and track business evolution across sessions.
+So again, this is where I'm adding memory to the project.
+Claude currently does not have at the $20 a month plan, but I'm giving it to Claude by using the MCP that I showed you.
+I tell it to use my terminology again, that's all in the files and pages that I added to the directory.
+I'm telling it you can use any content from this directory.
+It's subdirectoring its files, follow the memory system guidelines.
+So I've given it, you know, it's like a couple hundred lines of code essentially that answer questions all about me.
+So I asked Claude and by the way, this is actually a really, really good thing to show you.
+So if you scroll down here, it gives you a system prompt.
+So you can just say, take this right here, put it into Claude and then ask it what information, if anything, it has on you that answers these questions.
+And if it doesn't have any information about you on these questions here, ask it to give you each of these questions one by one.
+It's going to take you a little time to complete it.
+But once you do, you've, you're basically training this project on all the information about you and your business.
+It is going to save you so much.
+It's going to be so much better for you going forward.
+And then I give it just some more instructions on how to answer me.
+Like down here, I give it tone and personality, language choices, avoid flattering.
+Then I give it some principles and frameworks to use like the 80-20 rule or keep it simple, stupid, solid encapsulation principles, et cetera, et cetera.
+So now I've created this amazing brain, if you will, about my business that is trained on everything about what we do in the business.
+So I can ask it any kind of question.
+So I can say something like, how do I grow my email list over the next 90 days?
+And because it knows already what my goals are, what I'm currently doing, et cetera, it's going to give me a very specific and catered answer to my specific scenario.
+Okay.
+So now it is accessing my file system and getting context for my questions.
+We can personalize the answers to me.
+So I just click on allow once and it's going to go through and reading the different files that it needs in order to best answer my question.
+Okay.
+And after like 15 seconds, now it's giving me a very specific and personalized plan.
+So it's looking at my newsletter, open rate, engagement rate, et cetera.
+And now it's breaking down a phased plan step by step over the next 90 days.
+Again, I love this because it is specifically catered to me and the up-to-date information that it has about me that are sitting on my hard drive and not out in the cloud somewhere.
+And this, I just, I use this every single day.
+Okay.
+For this next use case, we're going to create and leverage connectors again here in cloud to create a project that is an expert executive assistant that, and I also wanted to understand really thoroughly ADHD.
+So struggles with ADHD.
+So I want an ADHD empathetic assistant that I can go to and help plan my week.
+I can have it break down tasks for me and projects for me.
+And so again, I'm going to go into cloud projects here.
+I've called it my PA or personal assistant.
+I think I've called it Kayla as well.
+And so as you can see here, what I've done is I've connected it to Google drive, Gmail and calendar.
+I also have it connected to Zapier and to Notion.
+Also, again, it's connected to my file systems on the computer if I need it to access anything there.
+Now for the instructions, really, really clear here.
+So I've given it a core identity, given a personality and communication style.
+I've made it British adaptability, primary expertise areas, etc.
+Like I have it break down projects again, ADHD optimized, given it examples, etc.
+So I could say, please check my calendar and suggest to me three days in time blocks
+where I can tackle a huge project I have for this week.
+I need to create a presentation for upcoming talk that I'm giving at a conference.
+I mean, it's actually really true.
+So let's go ahead and click go and see what it says.
+Okay.
+So it's just checked my Google calendar.
+It's saying, look, I've got your main calendar and the family calendar.
+Let's check what you've got this week so you can find some deep work time.
+Okay.
+So now that it's gotten a holistic view of my availability this week and the calendar.
+Now it's saying here are three prime opportunities and the reason that it's
+suggesting these times is because I've told it when I am most on the ball.
+If you will, I call it them.
+I call it my magic time.
+So it's suggesting morning blocks for to tackle this big project and it's
+breaking down my calendar and it's telling me why it's suggesting that time
+and then also how to approach it.
+Then it gives me a few ADHD friendly tweaks like build in transition time,
+have a backup plan, etc.
+So now it's asking me, well, which option do I want to choose?
+So let's just say I choose the second option and now it's breaking down that
+time block specifically on how it recommends.
+Again, taking into account ADHD tendencies and the struggles that tend to come
+with it, I can have Claude added specifically to my calendar right from here.
+And again, I haven't moved from Claude here and it's helping me break down
+the entire thing is checking my calendar suggesting when it's best to work on this.
+Again, I use this every single day for use case number three really using a lot
+of these features that make Claude really unique to use.
+Again, we're going to go back to the projects aspect and feature of Claude.
+And again, we're going to use the connectors.
+But this time I want it specifically to be a growth advisor for the AI playbook,
+which is again, is my membership community.
+So again, I've added files to that folder on the hard drive that I showed you before.
+And then just like other projects, the instructions that I've given it are really,
+really key.
+So basically I've given it a role, I've given it the core responsibilities.
+I've told it what file system and memory integration that I wanted to have access
+to just like we did in the first use case.
+So now I have a very specific Claude project that is trained specifically on
+my membership that has access to files that is not only updating,
+but also relevant to the membership.
+So let's type in here.
+So just five ways to lower churn from 5% to 3%.
+Churns at about 5% right now.
+So again, it's requesting to access the files and folders on the hard drive just like before.
+And after about 20 seconds, it has access all the necessary files on my hard drive
+in that folder and says basically available data.
+So now it's giving me a data backed churn reduction strategy.
+So one, two, three, four.
+I think it's five.
+I asked for five.
+Trade off some risks assessment.
+And again, I love this because it's data backed.
+It's based on the context that I have given it specifically.
+And because I have the memory MCP, it will remember this information as I go through.
+So let's just say, all right, I say, okay, I'm going to focus on number three.
+I can tell it that it will remember that for next time, which makes it really,
+really powerful.
+And again, leveraging some of the capabilities that not a lot of people
+know that you can do right here within Claude.
+For use case number four, we are going to leverage the artifacts feature.
+And we're going to create a hosted lead magnet app that is connected to my notion
+and we'll put it into a notion database.
+We're going to do this in about three minutes.
+So the first thing we're going to do is we're going to start a new chat.
+I'm going to say, let's build an app.
+Okay.
+So now it asked me a few questions and I'm telling it that I want to build a
+quiz slash survey.
+Okay, cool.
+Now it's giving me some suggestions on what the quiz slash survey could be about.
+Maybe some angles and so forth.
+So now I want to be really specific with what I want this quiz to be about.
+So I'm going to say create a seven question lead magnet quiz called what's
+your offer bottleneck with four results types and tailored recommendations to
+those result types, add the email capture form, then show the results.
+So as you can see here, this window that opened up here, this is the artifacts
+version of Claude.
+And so it's literally coding this quiz right before our eyes.
+And so while it's doing that, what I want to do here is I want to create a simple
+notion database.
+You can do this with air table if you want, or even a Google sheet.
+But since we use notion in, in my business, I want to have five different
+columns here.
+And so I want it to be the person's name, the email, the quiz answers that they
+chose the result of the quiz.
+And then when did they do the quiz?
+So the created time and what we're going to do when this is done here, when we
+tell it to map to my notion database, we're going to give it these specific
+names.
+Okay, so in about three minutes, it's completely coated this lead magnet,
+basically an app.
+And I'm laughing because I think it's so cool that it does it so fast.
+And it built in the features, the seven targeted questions, result types,
+scoring algorithm, email capture form, it programmed all of that on its own.
+I would have no idea how to program that.
+And now remember, I want the responses kicked over to a notion database.
+So I'm telling it on submit, log responses to my notion database called lead
+magnet quiz with these fields, name, participant email, quiz answers, result,
+created time.
+Essentially, it is just mirroring the column headers here.
+So I'm going to click on go and it'll start to map over to notion.
+It says, I'll integrate your quiz with notion automatically to capture all the
+lead data.
+This will give you a powerful database track conversion patterns and follow
+up strategically.
+So now it's adding the code in order to do that to the code that already
+created for this lead magnet here.
+And then it gives you the instructions to complete the integration.
+So basically, you'll need to create a simple backend endpoint that receives
+this data and writes the notion using their API, or you can use a webhook in
+Zapier.
+But before I do that, all I want to do is test the integration to notion.
+So you can see here, it's asking to access notion, which is a good thing.
+All right.
+And the test was complete.
+So it's telling me that the integration test results confirmed, et cetera.
+Let's go over to notion and check.
+And here it is.
+So if I click on this, open it up, gives me the email address, the
+quiz answers, and then also the result for that person.
+Really cool.
+And then we're going to leave this use case here, but just to finish it out.
+So it's like 95% done.
+You'd want to set up the easiest thing to do would just set up a webhook over
+in Zapier.
+And if you're like, I have no idea how to do that.
+Just answer.
+Want me to help set up Zapier webhook to make this fully automated?
+Just say yes, and it will help you do that.
+Walk through step by step.
+If you use case number five, we're going to create a Google drive researcher.
+So I'm still using the desktop version.
+You can totally use the web version for this if you want to.
+But what I want to do is I want to make sure that I've connected Google drive
+to my to Claude.
+Also, I haven't connected actually in two different ways.
+Zapier and the drive search.
+Now this is read only with the Zapier connection.
+You can read and write to Google drive.
+So essentially what I'm telling it, I wanted to look for a specific document
+in Google drive.
+So find my onboarding transcripts to team and drive.
+So it's a Google doc.
+And then I tell it to extract five practical recommendations for our next
+two weeks and generate a one page brief in Google docs with title,
+insights, action plan and owners.
+So I'm going to click go.
+And again, what it should do here is should ask me for ask me for permission
+to access Google drive.
+So you can see right here, it's searching Google drive for the relevant files.
+Okay.
+So it's found the file and it says based on the transcripts, I'll extract five
+practical recommendations and it is creating a new file in my Google drive
+based on these recommendations.
+Okay.
+And here it says perfect.
+I've successfully created a comprehensive one page brief in Google docs.
+This is what it's created.
+So let's go take a look at Google docs and here it is created.
+I just looked at my recent folder in Google drive and key insights for member
+onboarding sessions, overwhelm, YouTube, et cetera, et cetera.
+And then breaks it down into an action plan.
+And so cool.
+That's awesome.
+So now final step in this use case, what I want to do is I want it to
+connect to notion and put these tasks over into notion so that we can assign
+people on my team to do these things.
+And here's an example of one of those action items that it just, that it
+just gave me and created implement, gives me the objectives, deliverables,
+actions.
+I love this.
+So now I could just assign to somebody on my team and it did this for each
+of the five things.
+Again, all from within clot because I'm using the Google drive connector
+for drive search.
+So that is read only.
+So it's looking for the file and then I have it connected to the Zapier connector
+because now I can access all of the thousands of tools that Zapier has access
+to.
+So not only can I read on my Google drive, but now I can write to it, which
+is exactly what we just did.
+And I also have it connected to notion, which is why it was able to break
+that plan down and assign it over in notion.
+So as you can see here, there's a lot more than meets the eye when it
+comes to Claude and to be completely honest with you, I am just scratching
+the surface of the capabilities with Claude.
+And unfortunately, as I mentioned at the top of this video, that's what
+this whole thing's about.
+99% of people don't know that you can even do these types of things and see
+and leverage the power of Claude for your business.
+So hope you got a lot out of this video here today.
+Whatever link I talked about in the video here, I'll link it up in
+the description below.
+Again, if you're an online business owner looking to leverage AI in your
+business and want to be surrounded by an amazing community of like-minded
+entrepreneurs all working with AI and learning AI and leveraging it in
+your business so that you can work less and profit more in your business.
+And I invite you to join us inside my playbook community.
+Again, I'll link to it in the description below as always.
+Thanks so much for watching and I'll see you in the next video.
